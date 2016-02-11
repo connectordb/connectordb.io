@@ -1,1 +1,156 @@
-Under construction
+---
+layout: landing-page
+---
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<header class="major">
+					<h2>Gather Your Data</h2>
+					<p>Use our premade clients, or make your own!</p>
+				</header>
+				<div class="container">
+					<div class="row">
+						<div class="4u">
+							<section class="special box">
+								<a href="{{ site.baseurl }}/clients.html">
+								<i class="icon fa-laptop major"></i>
+								<h3>Laptop Logger</h3>
+								</a>
+								<p>An open-source app that can gather your keystrokes, currently active application, and much more.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section class="special box">
+								<a href="{{ site.baseurl }}/clients.html">
+								<i class="icon fa-android major"></i>
+								<h3>Android App</h3>
+								</a>
+								<p>Gather your steps, activity, and phone use in the background. Sync automatically to ConnectorDB so you always have access to your data.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section class="special box">
+								<a href="{{ site.baseurl }}/api.html">
+								<i class="icon fa-code major"></i>
+								<h3>API</h3>
+								</a>
+								<p>Use our Python or Javascript libraries to write your own data-gathering apps that sync to ConnectorDB, or create your own library using the ConnectorDB REST API.</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<header class="major">
+					<h2>See Your Data</h2>
+					<p>Log in to ConnectorDB to browse and plot your data.</p>
+				</header>
+				<div class="container">
+					<div class="row">
+						<div class="6u">
+							<section class="special">
+								<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+								<h3>Mollis adipiscing nisl</h3>
+								<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="6u">
+							<section class="special">
+								<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+								<h3>Neque ornare adipiscing</h3>
+								<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style1">
+				<header class="major">
+					<h2>Analyze Your Data</h2>
+					<p>Use ConnectorDB's powerful tools for data analysis.</p>
+				</header>
+				<div class="container">
+					<div class="row">
+						<div class="8u">
+							<section>
+								<h2>PipeScript</h2>
+								<p>Perform data analysis using PipeScript, a tiny analysis language built entirely for time series data. Do aggregations, map-reduce,
+								and transformations on your data, all in a single line of code.</p>
+								<p>While it is an unfamiliar little language, <a href="https://github.com/connectordb/pipescript/wiki/Basics">the tutorial</a> should get you up to speed in no time at all.
+								You can also play around with it below. On the left is input data, and on the right is your script's result. A list of available transforms is available <a href="pipescript/">here</a>.</p>
+								<form>
+									<div style="width:100%;">
+										<div style="display:inline-block;width:80%;">
+										<input type="text" class="form-control" id="script" style="font-family:monospace;" value="map( $['activity'] , $['steps']:sum )">
+										</div>
+										<div style="display:inline-block;width:18%;">
+											<input type="submit" id="scriptbtn" ></input>
+										</div>
+									</div>
+									</form>
+									<div>
+										<div style="display:inline-block;width:45%;height: 200px;">
+											<textarea id="input" ></textarea>
+										</div>
+											<div style="display:inline-block;width:45%;height:200px;">
+											<textarea id="output"></textarea>
+										</div>
+									</div>
+
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<h3>Datasets</h3>
+								<p>Combine multiple streams of data into a tabular dataset using PipeScript's built-in interpolators. No need for complicated JOIN statements.</p>
+								<ul class="actions">
+									<li><a href="pipescript/" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+							<hr />
+							<section>
+								<h3>Sample Scripts</h3>
+								<ul class="alt">
+									<li><a href="javascript:getweekday()">Get the weekday for each datapoint</a></li>
+									<li><a href="javascript:getsteps()">Find average number of steps taken per day</a></li>
+									<li><a href="javascript:getwalking()">Get only the datapoints where you were walking</a></li>
+									<li><a href="javascript:getcount()">Get the total number of datapoints</a></li>
+									<li><a href="javascript:getsumsteps()">Return the sum of steps taken every other datapoint.</a></li>
+								</ul>
+								<script>
+								function getweekday() {
+										$("#script").val('weekday');
+										runScript();
+									}
+									function getsteps() {
+										$("#script").val('map( day, $["steps"]:sum ) | reduce(mean)');
+										runScript();
+									}
+									function getwalking() {
+										$("#script").val('if $["activity"] == "walking"');
+										runScript();
+									}
+									function getcount() {
+										$("#script").val('count | if last');
+										runScript();
+									}
+									function getsumsteps() {
+										$("#script").val('$["steps"] | reset(count%2==1, sum) | if count%2==0');
+										runScript();
+									}
+								</script>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
