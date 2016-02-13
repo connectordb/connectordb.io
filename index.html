@@ -84,7 +84,7 @@ layout: landing-page
 						<div class="8u">
 							<section>
 								<h2>PipeScript</h2>
-								<p>Perform data analysis using PipeScript, a tiny analysis language built entirely for time series data. Do aggregations, map-reduce,
+								<p>Perform data analysis using PipeScript, a tiny analysis language built entirely for time series data. Do aggregations
 								and transformations on your data, all in a single line of code.</p>
 								<p>While it is an unfamiliar little language, <a href="https://github.com/connectordb/pipescript/wiki/Basics">the tutorial</a> should get you up to speed in no time at all.
 								You can also play around with it below. On the left is input data, and on the right is your script's result. A list of available transforms is available <a href="pipescript/">here</a>.</p>
@@ -111,20 +111,13 @@ layout: landing-page
 						</div>
 						<div class="4u">
 							<section>
-								<h3>Datasets</h3>
-								<p>Combine multiple streams of data into a tabular dataset using PipeScript's built-in interpolators. No need for complicated JOIN statements.</p>
-								<ul class="actions">
-									<li><a href="pipescript/" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-							<hr />
-							<section>
 								<h3>Sample Scripts</h3>
 								<ul class="alt">
 									<li><a href="javascript:getweekday()">Get the weekday for each datapoint</a></li>
 									<li><a href="javascript:getsteps()">Find average number of steps taken per day</a></li>
 									<li><a href="javascript:getwalking()">Get only the datapoints where you were walking</a></li>
 									<li><a href="javascript:getcount()">Get the total number of datapoints</a></li>
+									<li><a href="javascript:getmt()">Get both mean and total number of steps</a></li>
 									<li><a href="javascript:getsumsteps()">Return the sum of steps taken every other datapoint.</a></li>
 								</ul>
 								<script>
@@ -148,8 +141,22 @@ layout: landing-page
 										$("#script").val('$["steps"] | reset(count%2==1, sum) | if count%2==0');
 										runScript();
 									}
+									function getmt() {
+										$("#script").val('$["steps"] | {"mean": mean, "total": sum} | if last');
+										runScript();
+									}
 								</script>
 							</section>
+							<hr />
+							<section>
+								<h3>Datasets</h3>
+								<p>Combine multiple streams of data into a tabular dataset using PipeScript's built-in interpolators. No need for complicated JOIN statements.</p>
+								<ul class="actions">
+									<li><a href="pipescript/" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+
 						</div>
 					</div>
 				</div>
