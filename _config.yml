@@ -2,7 +2,7 @@
 title: ConnectorDB
 email: support@connectordb.com
 description: > # this means to ignore newlines until "baseurl:"
-  Test
+  An Open-Source database for Quantified Self & IoT
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://connectordb.github.com" # the base hostname & protocol for your site
 twitter_username: connectordb
@@ -12,5 +12,5 @@ host: 0.0.0.0
 markdown: kramdown
 
 kramdown:
-    input: GFM
-    syntax_highlighter: rouge
+  input: GFM
+  syntax_highlighter: rouge
