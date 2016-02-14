@@ -31,7 +31,7 @@ Tuesday, 12-Jan-16 00:27:09 UTC,         234,        walking
 ```
 
 then the first datapoint of your stream will be
-```
+```json
 {
     "t": 1452558429.0,
     "d": {
@@ -48,7 +48,7 @@ Starting Out
 
 For the next few examples, we will use the following data:
 
-```
+```json
 [{"t": 123, "d": 2},
 {"t": 124, "d": "1"},
 {"t": 124, "d": 0.1},
@@ -71,7 +71,7 @@ If you are familiar with programming, this is just a simple comparison statement
 
 Running the above PipeScript returns:
 
-```
+```json
 [{"t": 123, "d": true},
 {"t": 124, "d": true},
 {"t": 124, "d": false},
@@ -94,7 +94,7 @@ Logic operations (and/or/not) are built into PipeScript. This allows you to use 
 $ < 0 or not $ < 1
 ```
 
-```
+```json
 [{"t": 123, "d": true},
 {"t": 124, "d": true},
 {"t": 124, "d": false},
@@ -112,7 +112,7 @@ PipeScript also supports basic algebra. In particular, `+-/*%^` are all built in
 
 gives:
 
-```
+```json
 [{"t": 123, "d": 3.5},
 {"t": 124, "d": 3},
 {"t": 124, "d": 2.55},
@@ -130,7 +130,7 @@ if $ >= 1
 
 In PipeScript, the `if` statement is really a filter. It permits only those datapoints to pass that have met the given condition. When run on our original dataset above, we get:
 
-```
+```json
 [{"t": 123, "d": 2},
 {"t": 124, "d": 1},
 {"t": 124, "d": "true"}]
@@ -154,7 +154,7 @@ if last
 ```
 Only returns the last datapoint
 
-```
+```json
 [{"t": 124, "d": "true"}]
 ```
 
@@ -162,7 +162,7 @@ Only returns the last datapoint
 sum
 ```
 
-```
+```json
 [{"t": 123, "d": 2},
 {"t": 124, "d": 3},
 {"t": 124, "d": 3.1},
