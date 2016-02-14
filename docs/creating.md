@@ -1,3 +1,8 @@
+---
+layout: docs
+---
+## Creating a Database
+
 ConnectorDB will be holding your personal data, so it is important to take some basic security precautions.
 If you will be providing your own encryption, or just want to play around, feel free to skip the setup of an encrypted folder.
 

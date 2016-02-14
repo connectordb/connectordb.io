@@ -7,21 +7,24 @@ layout: default
     <header class="major">
         <h2>Download</h2>
         <p>Get Started with ConnectorDB</p>
-        <a href="#one" class="button big alt">Download Linux Binaries (.tar.gz)</a>
+        <a href="#one" class="button big alt">Download ConnectorDB (.tar.gz)</a>
     </header>
     <div class="container">
         <section>
-            <h2>Installing</h2>
+            <h2><a href="/docs/installing.html">Set Up ConnectorDB</a></h2>
+            <p>For detailed instructions, <a href="/docs/installing.html">please visit the installation instructions.</a></p>
 
-            {% capture installing %}{% include docs/install.md %}{% endcapture %}
-            {{ installing | markdownify }}
-        </section>
+            <h4>tl;dr</h4>
+{% highlight bash %}
+apt-get install postgresql redis-server
+tar -zxvf connectordb0.3.0.tar.gz
+cd connectordb
+./connectordb create mydatabase --user=myuser:mypassword
+./connectordb start mydatabase
+./connectordb run mydatabase
+{% endhighlight %}
 
-        <section>
-            <h2>Setting Up Your Database</h2>
-
-            {% capture setup %}{% include docs/setup.md %}{% endcapture %}
-            {{ setup | markdownify }}
+And ConnectorDB is running on port 8000. But you should really go through the <a href="/docs/installing.html">detailed instructions</a>, since you miss a lot of setup with this tl;dr.
         </section>
 
         <hr class="major" />
