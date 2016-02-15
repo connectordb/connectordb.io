@@ -49,7 +49,7 @@ For example, suppose that we have the following data from a fitness tracker:
           "steps": 5,
           "activity": "running"
         }
-},]
+}]
 ```
 
 We want to get the **total number of steps we took while running**. We cannot do this with one transform, but by chaining together a couple simple transforms, we can get there!
@@ -61,13 +61,14 @@ if $("activity") == "running"
 ```
 
 Notice that the identity operator `$` accepts an argument - it allows you to return a sub-object of your Datapoint. Our result is:
+
 ```json
 [
 {
     "t": 2,
     "d": {
           "steps": 10,
-          "activity": "running",
+          "activity": "running"
         }
 },
 {
@@ -78,6 +79,7 @@ Notice that the identity operator `$` accepts an argument - it allows you to ret
         }
 }]
 ```
+
 Now, let's extract the number of steps from the json object:
 
 ```
@@ -107,7 +109,7 @@ if $("activity") == "running" | $("steps") | sum
 },{
     "t": 4,
     "d": 15
-},]
+}]
 ```
 
 This is almost there! Our second datapoint has the answer we were looking for, but the pipeline also returns the intermediate result. Therefore, we add a final transform to the end of the pipeline:
@@ -120,9 +122,9 @@ if $("activity") == "running" | $("steps") | sum | if last
 [{
     "t": 4,
     "d": 15
-},]
+}]
 ```
 
 And this is the result we were looking for!
 
-In [the third tutorial, you will learn about one more cute feature of PipeScript: sub-pipelines](./subpipes.html).
+<a href="./subpipes.html" class="button alt">SubPipes <i class="fa fa-arrow-right"></i></a>

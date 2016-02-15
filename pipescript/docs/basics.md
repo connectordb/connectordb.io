@@ -5,6 +5,11 @@ layout: docsp
 
 Hi! You are probably here because you want to use PipeScript for some data analysis task. Let's get started!
 
+It is highly recommended that you follow along with the tutorial and experiment using the try-it editor for PipeScript:
+
+<a href="/pipescript" class="button alt"><i class="fa fa-pencil-square-o"></i> PipeScript Online Editor</a>
+
+
 Datapoint
 =============
 
@@ -172,4 +177,6 @@ sum
 ```
 
 
-While already pretty useful, the real power of PipeScript comes from combining the transforms into pipelines, as we will do in the [next tutorial](./pipeline.html).
+While already pretty useful, the real power of PipeScript comes from combining the transforms into pipelines.
+
+<a href="./pipeline.html" class="button alt">Pipeline <i class="fa fa-arrow-right"></i></a>
