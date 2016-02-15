@@ -31,6 +31,7 @@ Tuesday, 12-Jan-16 00:27:09 UTC,         234,        walking
 ```
 
 then the first datapoint of your stream will be
+
 ```json
 {
     "t": 1452558429.0,
