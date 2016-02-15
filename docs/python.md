@@ -5,7 +5,7 @@ layout: docs
 
 The ConnectorDB Python client's full documentation is at ReadTheDocs.
 
-####tl;dr:
+#### tl;dr:
 
 ```bash
 pip install connectordb
