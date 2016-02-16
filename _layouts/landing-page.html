@@ -68,10 +68,11 @@
 		<script>
 			// Load PipeScript asynchronously
 			$.getScript("/pipescript/pipescript.js",function(data, status, jqxhr) {
-				console.log("SUCCESS")
+				console.log("Loaded PipeScript")
 				runScript();
 			}).fail(function(jqxhr, settings, exception) {
-				output.setValue("Failed to load PipeScript:"+exception);
+				console.log("Exception while loading PipeScript: "+ exception)
+				runScript();
 			}
 
 			)
