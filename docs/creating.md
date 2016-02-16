@@ -35,12 +35,15 @@ Now it is time to create your first ConnectorDB database:
 connectordb create mydatabase/db
 ~~~~~~~~~~~
 
-This will create your own personal ConnectorDB database. Next, in order for the server to work, you need to start the Postgres, redis, and NATS servers which are used internally.
+This will create your own personal ConnectorDB database.
+
+Next, in order for the server to work, you need to start the Postgres, redis, and NATS servers which are used internally.
 ConnectorDB provides the `start` command for exactly this purpose.
 
 ~~~~~~~~~~~
 connectordb start mydatabase/db
 ~~~~~~~~~~~
+
 
 #### Add your user
 
@@ -62,3 +65,20 @@ connectordb run mydatabase/db
 ~~~~~~~~~~~
 
 Once you are done, you can exit the running connectordb process, and run `connectordb stop mydatabase/db` to stop the underlying postgres/redis/nats servers.
+
+
+#### Configure Your Database
+
+Since the data being sent to and from ConnectorDB is private, it is best to enable https. While it is suggested to keep ConnectorDB behind an SSL proxy such as NGINX,
+ConnectorDB does have support for SSL. You can enable support by modifying your database's `connectordb.conf` file.
+
+To read about advanced configuration options for your new database, [click here](./config.html).
+
+#### Your database is ready to go!
+
+You should be able to log in by navigating to `https://localhost:8000` (you DID enable https, right?), and typing in your username and password.
+
+You will now be faced with the ConnectorDB interface. To truly understand the design decisions that were made, and how ConnectorDB is structured,
+you should continue on to the final part of our tutorial.
+
+<a href="/docs/howitworks.html" class="button alt">How It Works <i class="fa fa-arrow-right"></i></a>
