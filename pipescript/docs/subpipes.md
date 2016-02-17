@@ -117,3 +117,25 @@ Once again, PipeScript's `reduce` function has little in common with the reduce 
 on each element, and returning the final result (last datapoint).
 
 PipeScript's `map | reduce` is extremely useful for quick aggregation queries, despite having little in common with *real* MapReduce.
+
+
+## Multiple Values
+
+You might want to perform multiple calculations at once in pipescript, or perhaps simply return an object. For this reason, PipeScript supports JSON:
+
+```
+{"sum": sum, "total": count} | if last
+```
+
+This script will return both the sum of all of the datapoints' values, and the number of datapoints at the same time. This object support also enables you to save values for later use in the pipeline.
+
+Finally, since scripts can get fairly complex with objects, PipeScript does accept multiline scripts. That is, the following is a valid script format:
+
+```
+if $("activity")!="still"
+| {
+    "total": $("steps"):sum,
+    "some_random_stuff": ( $("steps") | something | something else )
+}
+| if last
+```
