@@ -9,6 +9,7 @@ It is highly recommended that you follow along with the tutorial and experiment 
 
 <a href="/pipescript" class="button alt"><i class="fa fa-pencil-square-o"></i> PipeScript Online Editor</a>
 
+You can also find the [list of available transforms](/pipescript/#transforms) by scrolling down on the try it page.
 
 Datapoint
 =============
