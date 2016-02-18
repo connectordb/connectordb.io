@@ -44,7 +44,7 @@ type mysumTransform struct {
 
 // Copy performs a copy of the current transform with copies of all its internal state
 func (t *mysumTransform) Copy() (pipescript.TransformInstance,error) {
-	return &mysumTransform{t.CurrentSum}
+	return &mysumTransform{t.CurrentSum},nil
 }
 
 // Next is our workhorse function. It is within it that we will implement our transform
@@ -72,7 +72,7 @@ var mysum = pipescript.Transform{
 	Generator: func(name string, args []*pipescript.Script) (*pipescript.TransformInitializer, error) {
 		return &pipescript.TransformInitializer{
 			Args: args,	// Our transform doesn't use args, but we just pass this through without any changes
-			Transform: mysumTransform{0},	// Initialize our transform with 0
+			Transform: &mysumTransform{0},	// Initialize our transform with 0
 			}, nil
 	},
 }
