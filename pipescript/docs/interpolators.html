@@ -6,6 +6,8 @@ layout: docsp
 	<h2>Interpolators</h2>
 	<p>Interpolators form the core of PipeScript's dataset generation capabilities. Unlike <a href="/pipescript/#transforms">transforms</a>, which
 	are functions, and accept arguments, interpolators are simple identifiers. They do not accept arguments.</p>
+	<p>You can also use PipeScript instead of an interpolator. Simply in place of your interpolator, put a script. This is a useful stopgap for when
+		the interpolator you desire is not available. Note that PipeScript will return null when there are no datapoints in an interpolation period.</p>
 
 	<p>If you want to generate datasets using ConnectorDB, the
 		<a href="http://connectordb-python.readthedocs.org/en/latest/query.html#module-connectordb.query.dataset">python documentation</a>
