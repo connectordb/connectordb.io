@@ -4,7 +4,7 @@ layout: docsp
 ## Datasets
 
 **NOTE:** *The Dataset API is still undergoing heavy development, and as such might change quite a bit in the near future.
-In particular, the Dataset API is not yet completely moved to PipeScript, and as such is only readily accessible through ConnectorDB.*
+In particular, the Dataset API is not yet completely moved to PipeScript, and is only readily accessible through ConnectorDB.*
 
 Datasets are one of the most powerful features of PipeScript. The underlying issue is simple: You have multiple streams of data
 being gathered at the same time. Each stream is independent, so they do not have synchronized timestamps.

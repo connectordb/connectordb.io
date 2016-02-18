@@ -33,10 +33,3 @@ based upon your data - imagine a smart home which heats up your house when you a
 Or perhaps imagine a music streaming service which changes music types based on your heart rate, stress level, your schedule, and a variety of other pieces of data gathered by ConnectorDB.
 
 ConnectorDB itself does not include ML, as it is focused on being a general purpose data-gathering platform. However, it is built with integration into larger learning systems in mind.
-
-----------
-
-## Units
-
-ConnectorDB uses the metric system. That is, when creating streams, you should insert all distances as meters, temperatures as celsius. Unless otherwise stated in a stream's description, this is assumed to be the format
-of all data when performing analysis.
