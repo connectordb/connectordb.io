@@ -74,7 +74,7 @@ Errors are logged with their reference number by ConnectorDB, so problems can ea
 
 ###### GET ?q=this
 
-Returns the name of the currently logged in device. If you are not logged in, returns `nobody/none`
+Returns the name of the currently logged in device. If you are not logged in, returns `nobody`
 
 ###### GET ?q=countusers
 
@@ -160,6 +160,7 @@ To unsubscribe, send:
 When unsubscribing from a stream which used a non-empty transform, the unsubscribe message must include the same exact string for its script.
 
 Once you are subscribed to a stream, whenever you are to receive data, it will come in this format:
+
 ```json
 {
 	"stream": "myuser/mydevice/mystream",

@@ -121,33 +121,32 @@ mysum.Register()
 ## The full transform code:
 
 ```go
-
-import "github.com/connectordb/pipescript"
+package mysum
 
 type mysumTransform struct {
 	CurrentSum float64 // The current sum of datapoints
 }
 
 // Copy performs a copy of the current transform with copies of all its internal state
-func (t *mysumTransform) Copy() (pipescript.TransformInstance,error) {
-	return &mysumTransform{t.CurrentSum}
+func (t *mysumTransform) Copy() (pipescript.TransformInstance, error) {
+	return &mysumTransform{t.CurrentSum}, nil
 }
 
 // Next is our workhorse function. It is within it that we will implement our transform
-func (t *mysumTransform) Next(ti *pipescript.TransformIterator) (*pipescript.Datapoint,error) {
+func (t *mysumTransform) Next(ti *pipescript.TransformIterator) (*pipescript.Datapoint, error) {
 	// Get the next TransformEnvironment, which contains our input datapoint
 	te := ti.Next()
 
 	if te.IsFinished() {
 		// If we get here, then either there was an error, or the iterator finished. We clear our data, so that this transform can be used again
 		t.CurrentSum = 0
-		return te.Get()	// Since we are at an end condition, we pass through the input
+		return te.Get() // Since we are at an end condition, we pass through the input
 	}
 
 	//Attempt to get our datapoint as a floating point number
 	val, err := te.Datapoint.Float()
-	if err!=nil {
-		return nil,err
+	if err != nil {
+		return nil, err
 	}
 
 	//Update our current sum
@@ -158,21 +157,21 @@ func (t *mysumTransform) Next(ti *pipescript.TransformIterator) (*pipescript.Dat
 }
 
 var mysum = pipescript.Transform{
-	Name: "mysum",
+	Name:        "mysum",
 	Description: "Returns the running sum of datapoint values",
-	OneToOne: true,	// For each input, we always return an output!
-	Stateless: false, // Our result depends on more than just the current datapoint
-	Peek: false, // We do not look forward into the sequence - we only need to see current data
+	OneToOne:    true,  // For each input, we always return an output!
+	Stateless:   false, // Our result depends on more than just the current datapoint
+	Peek:        false, // We do not look forward into the sequence - we only need to see current data
 
 	// The OutputSchema is optional, it is the JsonSchema of our output
-	OutputSchema: `{"type": "number"}`
+	OutputSchema: `{"type": "number"}`,
 
 	// The Generator function: It is given the Scripts of all the arguments, and returns a TransformInitializer
 	Generator: func(name string, args []*pipescript.Script) (*pipescript.TransformInitializer, error) {
 		return &pipescript.TransformInitializer{
-			Args: args,	// Our transform doesn't use args, but we just pass this through without any changes
-			Transform: mysumTransform{0},	// Initialize our transform with 0
-			}, nil
+			Args:      args,               // Our transform doesn't use args, but we just pass this through without any changes
+			Transform: &mysumTransform{0}, // Initialize our transform with 0
+		}, nil
 	},
 }
 
@@ -184,8 +183,8 @@ func init() {
 
 And that's it! You have a full working transform!
 
-Of course, this is a very basic transform. To see how more advanced transforms work, you can look at the [transform implementations](https://github.com/connectordb/pipescript/tree/master/transforms).
-Furthermore, the implementation of the `if` and `$` transform, which are built in can be very useful to you: [if](https://github.com/connectordb/pipescript/blob/master/if.go) and [$](https://github.com/connectordb/pipescript/blob/master/identity.go).
+Of course, this is a very basic transform. To see how more advanced transforms work, you can look at the [transform implementations](https://github.com/connectordb/pipescript/tree/master/transforms/core).
+
 
 ### Testing
 
@@ -194,6 +193,8 @@ What good is code that is not tested? PipeScript includes a special structure th
 Create a file called `mysum_test.go` and write the following:
 
 ```go
+package mysum
+
 import (
 	"testing"
 
@@ -231,8 +232,10 @@ func TestMySum(t *testing.T) {
 			{5, float64(9)},
 			{6, float64(15)},
 		},
-	}.Run(t)	// Run the test case!
+	}.Run(t) // Run the test case!
 }
 ```
 
 I will leave testing illegal values to you.
+
+<a href="./custominterpolators.html" class="button alt">Custom Interpolators <i class="fa fa-arrow-right"></i></a>

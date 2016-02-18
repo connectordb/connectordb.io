@@ -22,7 +22,7 @@ type Datapoint struct {
 }
 ```
 
-Whatever your data format is, you will need to somehow fit it into the `pipescript.Datapoint` structure. If you have tabular data, `map[string]` is recommended for the Data portion of your Datapoints.
+Whatever your data format is, you will need to somehow fit it into the `pipescript.Datapoint` structure. If you have tabular data, `map[string]interface{}` is recommended for the Data portion of your Datapoints.
 
 For more information, look at [Datapoint's documentation](https://godoc.org/github.com/connectordb/pipescript#Datapoint)
 
@@ -50,55 +50,69 @@ For more detail on DatapointIterator, [look at its documentation](https://godoc.
 package main
 
 import (
-	"github.com/connectordb/pipescript"	// Imports pipescript
+	"fmt"
 
-	// Registers all of the transforms that come with PipeScript (the PipeScript 'standard library').
-	// you can pick and choose the transforms you want by importing only the sub-directories you want.
-	// Look at https://github.com/connectordb/pipescript/tree/master/transforms for details
-	_ "github.com/connectordb/pipescript/transforms"
+	"github.com/connectordb/pipescript" // Imports pipescript
+
+	"log"
+
+	"github.com/connectordb/pipescript/transforms"
 )
 
 // Replace this with your own implementation of DatapointIterator
-type MyDatapointIterator struct{
-	MyData []string
+type MyDatapointIterator struct {
+	MyData       []int
 	MyTimestamps []float64
-	iter int
+	iter         int
 }
 
 // Next is the only method you need to implement
-func (myiter *MyDatapointIterator) Next() (*pipescript.Datapoint,error) {
+func (myiter *MyDatapointIterator) Next() (*pipescript.Datapoint, error) {
 	i := myiter.iter
-	if i > len(myiter.MyData) {
-		return nil,nil	// When done, return nil,nil
+	if i >= len(myiter.MyData) {
+		return nil, nil // When done, return nil,nil
 	}
 	dp := &pipescript.Datapoint{Timestamp: myiter.MyTimestamps[i], Data: myiter.MyData[i]}
 
 	myiter.iter++
-	return dp
+	return dp, nil
 }
 
-func RunPipescript() error {
+func main() {
+	// Registers all of the transforms that come with PipeScript (the PipeScript 'standard library').
+	// you can pick and choose the transforms you want by importing only the sub-directories you want.
+	// Look at https://github.com/connectordb/pipescript/tree/master/transforms for details
+	transforms.Register()
+
+	fmt.Printf("Running My Script!\n")
 
 	// The Parse method will generate your script
-	s,err := pipescript.Parse("if $ < 5 | sum")
-	if err!=nil {
-		return err
+	s, err := pipescript.Parse("if $ < 5 | sum")
+	if err != nil {
+		log.Fatal(err.Error())
 	}
 
 	// SetInput sets the input iterator of PipeScript
 	s.SetInput(&MyDatapointIterator{
-		[]string{"hi","hello"},
-		[]float64{1,2},
+		[]int{3, 7, 2, 4},
+		[]float64{1, 2, 3, 4},
 		0,
 	})
 
-	var dp *pipescript.Datapoint
-	for dp!=nil && err==nil {
-		dp,err := s.Next()
+	dp := &pipescript.Datapoint{}
+	for dp != nil && err == nil {
+		// Get the next output datapoint from the script
+		dp, err = s.Next()
 
-		fmt.Printf("The Resulting data is: %v", dp)
+		fmt.Printf("%v\n", dp)
 	}
-        return err
-}
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 
+	fmt.Printf("Done!\n")
+}
 ```
+
+
+<a href="./customtransforms.html" class="button alt">Custom Transforms <i class="fa fa-arrow-right"></i></a>
