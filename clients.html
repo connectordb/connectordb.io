@@ -14,8 +14,32 @@ layout: default
 					<a href="#" class="image fit"><img src="images/laptoplogger.png" alt="" /></a>
 					<h3>Laptop Logger</h3>
 					<p>Install it on your PC, and gather keystrokes, mouseclicks, active applications, and more. Synchronizes your data to ConnectorDB automatically.</p>
+					<script>
+						// http://stackoverflow.com/questions/7044944/jquery-javascript-to-detect-os-without-a-plugin
+						var isMac = navigator.appVersion.indexOf("Mac")!==-1;
+						var isWindows = navigator.appVersion.indexOf("Win")!==-1;
+						var isLinux = navigator.appVersion.indexOf("Linux")!==-1 || navigator.appVersion.toUpperCase().indexOf("X11")!==-1;
+						// http://stackoverflow.com/questions/9038625/detect-if-device-is-ios
+						var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+						if (isMac) {
+							document.write('<p>Unfortunately, Mac support is not yet available. You can help out the mac version by contributing!</p>');
+						}
+					</script>
 					<ul class="actions">
-						<li><a href="https://github.com/connectordb/connectordb-laptoplogger/releases/download/v0.3/laptoplogger_install.exe" class="button"><i class="icon fa-windows"></i> Download</a></li>
+						<script>
+							if (isWindows) {
+								document.write('<li><a href="https://github.com/connectordb/connectordb-laptoplogger/releases/download/v0.3/laptoplogger_install.exe" class="button"><i class="icon fa-windows"></i> Download</a></li>');
+							}
+							if (isLinux) {
+								document.write('<li><a href="https://github.com/connectordb/connectordb-laptoplogger" class="button"><i class="icon fa-linux"></i> Download</a></li>');
+							}
+							if (isMac) {
+								document.write('<li><a href="https://github.com/connectordb/connectordb-laptoplogger" class="button"><i class="icon fa-apple"></i> Help make a Mac version!</a></li>');
+							}
+
+						</script>
+
 						<li><a href="https://github.com/connectordb/connectordb-laptoplogger" class="button alt"><i class="icon fa-github"></i> Extend</a></li>
 					</ul>
 				</section>
@@ -25,7 +49,17 @@ layout: default
 					<a href="#" class="image fit"><img src="images/android.jpg" alt="" /></a>
 					<h3>Android App</h3>
 					<p>Gather your step count, phone use, activity, and more. Runs automatically in the background on your Android phone. Synchronizes with ConnectorDB.</p>
+					<script>
+						if (isiOS) {
+							document.write("<p>We really want to make an iOS version of this app. Since you're an iOS user, how about helping out?</p>");
+						}
+					</script>
 					<ul class="actions">
+						<script>
+							if (isiOS) {
+								document.write('<li><a href="https://github.com/connectordb/connectordb-ios" class="button"><i class="icon fa-apple"></i> Help make an iOS version!</a></li>');
+							}
+						</script>
 						<li><a href="#" class="button"><i class="icon fa-android"></i> Download</a></li>
 						<li><a href="https://github.com/connectordb/connectordb-android" class="button alt"><i class="icon fa-github"></i> Extend</a></li>
 					</ul>
