@@ -33,3 +33,17 @@ based upon your data - imagine a smart home which heats up your house when you a
 Or perhaps imagine a music streaming service which changes music types based on your heart rate, stress level, your schedule, and a variety of other pieces of data gathered by ConnectorDB.
 
 ConnectorDB itself does not include ML, as it is focused on being a general purpose data-gathering platform. However, it is built with integration into larger learning systems in mind.
+
+
+----------
+
+
+### Data analysis
+
+While the web app that comes with ConnectorDB allows you to view a bit of data, you can do powerful analysis yourself in python by connecting to the REST API. ConnectorDB includes
+special query types (such as datasets) that allow your python scripts to access data in a way that makes it easy to insert into machine learning algorithms.
+
+Currently, the main power of ConnectorDB is when performing data analysis in Python.
+
+
+<a href="/docs/python.html" class="button alt">Python API <i class="fa fa-arrow-right"></i></a>

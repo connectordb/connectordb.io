@@ -3,7 +3,9 @@ layout: docs
 ---
 ## Python
 
-The ConnectorDB Python client's full documentation is at ReadTheDocs.
+The ConnectorDB Python client's full documentation is at ReadTheDocs. The ConnectorDB API allows you total access to your dataand ConnectorDB's dataset generation capabilities.
+
+<a href="http://connectordb-python.readthedocs.org/en/latest/" class="button alt"><i class="fa fa-external-link"></i> View Python Docs</a>
 
 #### tl;dr:
 
@@ -13,8 +15,10 @@ pip install connectordb
 
 ```python
 import connectordb
-cdb = connectordb.ConnectorDB("apikey")
+cdb = connectordb.ConnectorDB("apikey",url="https://cdb.mysite.com")
 cdb["mystream"].insert("hi!")
 ```
 
-<a href="http://connectordb-python.readthedocs.org/en/latest/" class="button alt"><i class="fa fa-external-link"></i> Full Python Docs</a>
+If you have a favorite language, or you don't want to work in python, you can look at the REST API to interface with ConnectorDB directly:
+
+<a href="/docs/restapi.html" class="button alt">REST API <i class="fa fa-arrow-right"></i></a>

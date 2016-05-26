@@ -133,9 +133,9 @@ Each websocket command is of the following format:
 
 ```
 {
-	"cmd": command
-	"arg": argument
-	"transform": optional PipeScript transform for subscribing
+	"cmd": "command",
+	"arg": "argument",
+	"transform": "optional PipeScript transform for subscribing"
 }
 ```
 
@@ -207,14 +207,21 @@ Lists the user's devices
 
 Creates the user, with optional streams to create in the user device.
 
-TODO: add example
+```
+POST /api/v1/crud/myuser/
+{
+	"password": "mypass",
+	"email": "my@email",
+	"role": "user"
+}
+```
 
 ##### PUT
 
 Allows you to update the user. Set just the fields you want to modify. For example, changing password for user `myuser` would be
 
 ```
-POST /api/v1/crud/myuser/
+PUT /api/v1/crud/myuser/
 {
 	"password": "mypassword"
 }
@@ -242,11 +249,18 @@ Lists the device's streams
 
 Creates the device, with optional streams to create within it.
 
-TODO: add example
+```
+POST /api/v1/crud/myuser/mydevice/
+{
+	"nickname": "My Awesome Device",
+	"role": "none",
+	"enabled": true
+}
+```
 
 ##### PUT
 
-Allows you to update the device. Set just the fields you want to modify.
+Allows you to update the device. Set just the fields you want to modify. See user update (same exact principle).
 
 ##### DELETE
 
@@ -263,9 +277,14 @@ Gets the stream. Returns error if it doesn't exist or you have no access.
 
 ##### POST
 
-Creates the stream
+Creates the stream. A schema is required
 
-TODO: add example
+```
+POST /api/v1/crud/myuser/mydevice/mystream
+{
+	"schema": "{\"type\":\"number\"}"
+}
+```
 
 ##### PUT
 

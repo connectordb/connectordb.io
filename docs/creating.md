@@ -50,15 +50,26 @@ connectordb start mydatabase/db
 Finally, we are ready for you to add your first user:
 
 ~~~~~~~~~~~
-connectordb run mydatabase/db --localhost --join
+connectordb run mydatabase/db --join
 ~~~~~~~~~~~
 
-The above command runs ConnectorDB only on localhost, and with free join permissions, meaning that anyone can add themselves as a user. You can set fine-grained configuration
-details in `mydatabase/db/connectordb.conf`.
+The above command runs ConnectorDB at `localhost:8000`, and with free join permissions, meaning that anyone can add themselves as a user. You can set fine-grained configuration
+details in `mydatabase/db/connectordb.conf`. If running on a server, you will need to set up the site name in connectordb.conf before adding users.
 
 Now, using your browser, navigate to `http://localhost:8000/join`, where you will be prompted to create your user.
 
-Once all of the users you want are added, you can `ctrl+c` on the running database, and restart it without the extra options.
+Once all of the users you want are added, you can `ctrl+c` on the running database.
+
+If you want to create users in the future, you should designate a user as administrator, so that this user can always access the `join` page. For security,
+you cannot make a user an admin from the web app. You need to manually run the connectordb shell:
+
+~~~~~~~~~~~
+connectordb shell mydatabase/db
+> mkadmin username
+> exit
+~~~~~~~~~~~
+
+Once finished, you can run connectordb without free join permissions:
 
 ~~~~~~~~~~~
 connectordb run mydatabase/db
@@ -67,18 +78,4 @@ connectordb run mydatabase/db
 Once you are done, you can exit the running connectordb process, and run `connectordb stop mydatabase/db` to stop the underlying postgres/redis/nats servers.
 
 
-#### Configure Your Database
-
-Since the data being sent to and from ConnectorDB is private, it is best to enable https. While it is suggested to keep ConnectorDB behind an SSL proxy such as NGINX,
-ConnectorDB does have support for SSL. You can enable support by modifying your database's `connectordb.conf` file.
-
-To read about advanced configuration options for your new database, [click here](./config.html).
-
-#### Your database is ready to go!
-
-You should be able to log in by navigating to `https://localhost:8000` (you DID enable https, right?), and typing in your username and password.
-
-You will now be faced with the ConnectorDB interface. To truly understand the design decisions that were made, and how ConnectorDB is structured,
-you should continue on to the final part of our tutorial.
-
-<a href="/docs/howitworks.html" class="button alt">How It Works <i class="fa fa-arrow-right"></i></a>
+<a href="/docs/config.html" class="button alt">Configuring ConnectorDB <i class="fa fa-arrow-right"></i></a>

@@ -5,7 +5,7 @@ layout: docs
 
 **WARNING:** *Permissions are the most complicated configuration of ConnectorDB. It is imperative that you know what you are doing when changing permissions, as you can create security issues and information leaks. You can also cause many errors, including making your entire database unusable when you change the wrong options.*
 
-By default, ConnectorDB uses its built-in permissions structure, which creates a private server, where only users who are logged in have access to any data whatsoever. Using the optional `permissions.conf`, it is possible to modify this behavior to make connectordb more github-like (as is done with connectordb.com), and to enforce limits on specific roles.
+By default, ConnectorDB uses its built-in permissions structure, which creates a private server, where only users who are logged in have access to any data whatsoever. Using the optional `permissions.conf`, it is possible to modify this behavior to make connectordb more github-like, and to enforce limits on specific roles.
 
 To start playing around with permissions, you will need to add a permissions configuration file to your database.
 
@@ -71,7 +71,7 @@ Most options should be fairly self-explanatory, but the core permissions structu
 
 #### Roles
 
-The first thing you will notice is that there are `user_roles` and `device_roles`. These are the possible roles given to every single user and device. They are visibly to querying by default.
+The first thing you will notice is that there are `user_roles` and `device_roles`. These are the possible roles given to every single user and device.
 
 Of special note is the required "nobody" user role. This is the role a random visitor to the server takes when they are not logged in. Any permissions given to the nobody role will be granted to anonymous visitors.
 
