@@ -35,47 +35,14 @@ Now it is time to create your first ConnectorDB database:
 connectordb create mydatabase/db
 ~~~~~~~~~~~
 
-This will create your own personal ConnectorDB database.
+This will create all of the necessary files in mydatabase/db
 
-Next, in order for the server to work, you need to start the Postgres, redis, and NATS servers which are used internally.
+Next, in order for the server to work, you need to start the Postgres, Redis, and NATS servers which are used internally.
 ConnectorDB provides the `start` command for exactly this purpose.
 
 ~~~~~~~~~~~
 connectordb start mydatabase/db
 ~~~~~~~~~~~
-
-
-#### Add your user
-
-Finally, we are ready for you to add your first user:
-
-~~~~~~~~~~~
-connectordb run mydatabase/db --join
-~~~~~~~~~~~
-
-The above command runs ConnectorDB at `localhost:8000`, and with free join permissions, meaning that anyone can add themselves as a user. You can set fine-grained configuration
-details in `mydatabase/db/connectordb.conf`. If running on a server, you will need to set up the site name in connectordb.conf before adding users.
-
-Now, using your browser, navigate to `http://localhost:8000/join`, where you will be prompted to create your user.
-
-Once all of the users you want are added, you can `ctrl+c` on the running database.
-
-If you want to create users in the future, you should designate a user as administrator, so that this user can always access the `join` page. For security,
-you cannot make a user an admin from the web app. You need to manually run the connectordb shell:
-
-~~~~~~~~~~~
-connectordb shell mydatabase/db
-> mkadmin username
-> exit
-~~~~~~~~~~~
-
-Once finished, you can run connectordb without free join permissions:
-
-~~~~~~~~~~~
-connectordb run mydatabase/db
-~~~~~~~~~~~
-
-Once you are done, you can exit the running connectordb process, and run `connectordb stop mydatabase/db` to stop the underlying postgres/redis/nats servers.
 
 
 <a href="/docs/config.html" class="button alt">Configuring ConnectorDB <i class="fa fa-arrow-right"></i></a>
