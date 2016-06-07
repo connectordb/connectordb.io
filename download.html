@@ -15,17 +15,32 @@ layout: default
             <h2><a href="/docs/installing.html">Set Up ConnectorDB</a></h2>
             <p>For detailed instructions, <a href="/docs/installing.html">please visit the installation instructions.</a></p>
 
+
             <h4>tl;dr</h4>
+
 {% highlight bash %}
-apt-get install postgresql redis-server
-tar -zxvf connectordb0.3.0.tar.gz
-cd connectordb
+sudo apt-get install postgresql redis-server
+
+# ConnectorDB manages databases itself
+sudo systemctl disable postgresql.service
+sudo systemctl stop postgresql.service
+sudo systemctl disable redis-server.service
+sudo systemctl stop redis-server.service
+
+# Get the files
+wget https://github.com/connectordb/connectordb/releases/download/v0.3.0a1/connectordb0.3.0a1.tar.gz
+tar -zxvf connectordb0.3.0a1.tar.gz
+
+cd bin
 ./connectordb create mydatabase --user=myuser:mypassword
 ./connectordb start mydatabase
 ./connectordb run mydatabase
 {% endhighlight %}
 
-And ConnectorDB is running on port 8000. But you should really go through the <a href="/docs/installing.html">detailed instructions</a>, since you miss a lot of setup with this tl;dr.
+<p>And ConnectorDB is running on localhost port 8000. But you should really go through the <a href="/docs/installing.html">detailed instructions</a>, since you miss a lot of setup with this tl;dr.</p>
+
+<img style="display:block;margin:0 auto;" src="images/quickrun.gif"/>
+
         </section>
 
         <hr class="major" />
