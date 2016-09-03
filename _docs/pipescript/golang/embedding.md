@@ -1,4 +1,4 @@
-## Embedding PipeScript
+# Embedding PipeScript
 
 So you want to embed PipeScript in your project. This page will show you what you need to do!
 

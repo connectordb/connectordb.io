@@ -10,4 +10,6 @@ The goal of PipeScript is to make most data preparation a single line of code.
    :maxdepth: 1
    :glob:
 
+   Tutorial <tutorial/basics.md>
    *
+   Extending PipeScript <golang/index.rst>

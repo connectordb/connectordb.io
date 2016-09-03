@@ -25,13 +25,10 @@ mkdocs: html
 
 .PHONY: pipesdocs
 pipesdocs:
-	rm -rf ./pipescript/transforms
-	pipes transforms dumpdocs ./pipescript/transforms
-
-.PHONY: pipes
-pipes:
 	go get -u github.com/connectordb/pipescript
 	go install github.com/connectordb/pipescript/pipes
+	rm -rf ./pipescript/transforms
+	pipes transforms dumpdocs ./pipescript/transforms
 
 
 .PHONY: help
@@ -71,7 +68,7 @@ clean:
 	rm -rf ../docs/$(CDBVERSION)
 
 .PHONY: html
-html: pipesdocs
+html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."

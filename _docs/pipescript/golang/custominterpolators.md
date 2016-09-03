@@ -1,6 +1,6 @@
 ## Custom Interpolators
 
-It is assumed that you have already followed the [custom transform tutorial](./customtransforms.html).
+It is assumed that you have already followed the [custom transform tutorial](customtransforms.html).
 
 Interpolators are simpler than transforms, since they do not have any arguments or complex environments. We will implement the `sum` interpolator.
 
