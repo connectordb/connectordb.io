@@ -1,31 +1,4 @@
----
-layout: docs
----
-
-<style>
-
-
-h4 {
-
-	text-transform: none;
-	color: orange;
-	font-weight: bold;
-	font-size: 150%;
-}
-
-h5 {
-	color: green;
-	font-weight: bold;
-}
-
-h6 {
-	color: blue;
-	font-weight: bold;
-	text-transform: none;
-}
-</style>
-
-## REST API
+# REST API
 
 The REST API is split into several parts:
 
@@ -37,7 +10,7 @@ The REST API is split into several parts:
 * query - merge and dataset queries (aggregations which use multiple streams of data)
 
 
-### Authentication
+## Authentication
 
 ConnectorDB accepts apikey as a URL parameter, for example:
 
@@ -51,7 +24,7 @@ the username is empty, and the password is the device API key.
 Lastly, the REST API is integrated with the frontend's cookie-based login, so if you are already logged into the web UI,
 the REST API will use cookie authentication by default.
 
-### Errors
+## Errors
 
 Everything in the REST API returns the same format of error upon an unsuccessful query. An example error message:
 
@@ -67,6 +40,12 @@ The code corresponds to the http code, msg is a text message which explains the 
 Errors are logged with their reference number by ConnectorDB, so problems can easily be pinpointed.
 
 ----------
+
+<style>
+h3 {text-transform: none;color: orange;font-weight: bold;font-size: 150%;}
+h4 {color: green;font-weight: bold;}
+h5 {color: blue;font-weight: bold;text-transform: none;}
+</style>
 
 #### /api/v1
 

@@ -1,6 +1,3 @@
----
-layout: docs
----
 ## Permissions
 
 **WARNING:** *Permissions are the most complicated configuration of ConnectorDB. It is imperative that you know what you are doing when changing permissions, as you can create security issues and information leaks. You can also cause many errors, including making your entire database unusable when you change the wrong options.*

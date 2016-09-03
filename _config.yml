@@ -11,6 +11,9 @@ host: 0.0.0.0
 # Build settings
 markdown: kramdown
 
+include: 
+  - _static
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge

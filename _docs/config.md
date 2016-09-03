@@ -1,6 +1,3 @@
----
-layout: docs
----
 ## Configuration
 
 When starting or running, connectordb loads all of the necessary information from a JSON-formatted configuration file.

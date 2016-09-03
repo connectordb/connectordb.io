@@ -1,7 +1,3 @@
----
-layout: docs
----
-
 #### Add your user
 
 We are ready for you to add your first user:

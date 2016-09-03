@@ -1,6 +1,3 @@
----
-layout: docs
----
 ## Python
 
 The ConnectorDB Python client's full documentation is at ReadTheDocs. The ConnectorDB API allows you total access to your data and ConnectorDB's dataset generation capabilities.

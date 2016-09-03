@@ -1,6 +1,4 @@
----
-layout: docs
----
+
 ## How it Works
 
 ConnectorDB is built with the totally connected person in mind. It is meant to be a centralized repository for your internet connected devices' and sensors' gathered data,
