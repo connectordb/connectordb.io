@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+title: "{{ title|striptags|e }}{{ titlesuffix }}"
 ---
 
 
@@ -61,18 +62,13 @@ layout: default
       </div>
 {%- endmacro %}
 
-<section id="main" class="wrapper style1">
-<div class="container">
+<div class="container mtb">
     <div class="row">
-      <div class="4u">
-        <section>
-          <h2>ConnectorDB</h2>
-          {{ sidebar() }}
-        </section>
+      <div class="col-lg-4">
+        {{ sidebar() }}
       </div>
-    <div class="8u skel-cell-important">
-          {% block body %} {% endblock %}
+      <div class="col-lg-8">
+        {% block body %} {% endblock %}
+      </div>
     </div>
-  </div>
 </div>
-</section>

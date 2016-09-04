@@ -2,23 +2,7 @@
 layout: default
 ---
 
-<section id="main" class="wrapper style1">
+{{ content }}
 
-	<div class="container">
-		<div class="row">
-			<div class="4u">
-				<section>
-					<h2>ConnectorDB</h2>
-					{% include /docs_sidebar.html %}
-					<a href="/pipescript/docs" class="button alt"><i class="fa fa-external-link"></i> PipeScript Docs</a>
-				</section>
-			</div>
-			<div class="8u skel-cell-important">
-				<a href="{{site.github.repository_url}}/edit/master/{{page.path}}" style="float:right;"><i class="icon fa-github"></i> Edit Me</a>
-				{{ content }}
-			</div>
-		</div>
-
-
-	</div>
-</section>
+<!-- Make sure that the docs don't have the ugly ending -->
+<div style="height: 300px;"></div>

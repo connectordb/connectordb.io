@@ -1,172 +1,77 @@
 ---
-layout: landing-page
+layout: default
+title: Home
+permalink: /
 ---
-<section id="zero" class="wrapper style2">
-	<header class="major">
-		<h2>What is ConnectorDB</h2>
-		<p>A repository for all of your quantified-self data, and a control center for your IoT devices</p>
-	</header>
-	<div class="container">
-		<p>There already exist many apps and fitness trackers that gather and attempt to make sense of your data. Most of these services are isolated - your phone's fitness tracking software knows nothing about your browser's time-tracking extension. Furthermore, each
-	app and service has its own method for downloading data (if they offer raw data at all!), which makes an all-encompassing analysis of life extremely tedious. ConnectorDB offers a self-hosted
-open-source alternative to these services. It allows every device you have to synchronize with one central database, which allows creating an in-depth picture of your life.</p>
-<p>The ConnectorDB API allows you total access to your data, and is built specifically with Machine Learning in mind. Anyone with the technical knowledge can build and share programs
-	that can extract insights from any data. To make Machine Learning easier, ConnectorDB also allows a supervision signal in the form of life ratings, enabling learning algorithms to optimize your goals directly.</p>
-		<p>In the future, having such a centralized database will enable truly smart devices. A Just like there are many disparate apps for self-tracking, current IoT devices seem to be unaware of anything but their own sensors.
-		With devices connected to a central life-server such as ConnectorDB, learning algorithms can be aware of <i>everything</i>. You would not need to control your lights with an app - a central AI would set them
-	to the perfect intensity based on everything from your stress level to your schedule. ConnectorDB and its successors will enable our surroundings to automatically adjust themselves to hopefully make our lives easier.</p>
-	</div>
-</section>
-		<!-- One -->
-			<section id="one" class="wrapper style1">
-				<header class="major">
-					<h2>Gather Your Data</h2>
-					<p>Use the premade clients, or make your own!</p>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="4u">
-							<section class="special box">
-								<a href="{{ site.baseurl }}/clients.html">
-								<i class="icon fa-laptop major"></i>
-								<h3>Laptop Logger</h3>
-								</a>
-								<p>An open-source app that can gather your keystrokes and currently active application.</p>
-							</section>
-						</div>
-						<div class="4u">
-							<section class="special box">
-								<a href="{{ site.baseurl }}/clients.html">
-								<i class="icon fa-android major"></i>
-								<h3>Android App</h3>
-								</a>
-								<p>Gather your steps, activity, and phone use in the background. Sync automatically to ConnectorDB so you always have access to your data.</p>
-							</section>
-						</div>
-						<div class="4u">
-							<section class="special box">
-								<a href="{{ site.baseurl }}/docs/python.html">
-								<i class="icon fa-code major"></i>
-								<h3>API</h3>
-								</a>
-								<p>Use the Python or Javascript libraries to write your own data-gathering/analysis apps that sync to ConnectorDB, or create your own library using the ConnectorDB REST API.</p>
-							</section>
-						</div>
-					</div>
-				</div>
-			</section>
 
-		<!-- Two -->
-			<section id="two" class="wrapper style2">
-				<header class="major">
-					<h2>View your data</h2>
-					<p>Log in to ConnectorDB to browse devices and add ratings.</p>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="6u">
-							<section class="special">
-								<a href="#" class="image fit"><img src="images/ratings.png" alt="" /></a>
-								<h3>Add Ratings</h3>
-								<p>While your devices will gather most of your data, you can manually add a diary, or ratings of your mood and productivity. This will allow you to correlate gathered data with how you feel. This supervision signal enables use of powerful Machine Learning methods directly on your data.</p>
-							</section>
-						</div>
-						<div class="6u">
-							<section class="special">
-								<a href="#" class="image fit"><img src="images/data.png" alt="" /></a>
-								<h3>View your Data</h3>
-								<p>Basic viewing of data is implemented - ConnectorDB doesn't yet plot your data, nor does it perform ML. But it allows you to start gathering data NOW, so that you are ready to benefit when these features appear.</p>
-							</section>
-						</div>
-					</div>
-				</div>
-			</section>
+<div id="headerwrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Your personal Life Server</h3>
+                <h1><img src="{{ "/assets/img/title_logo_light.png" | prepend: site.baseurl }}" class="img-responsive" style="max-width: 600px;"></h1>
+                <h5>An open-source platform for Quantified Self and IoT</h5>
+                				
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 himg" style="margin-top: 30px;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/njos57IJf-0" frameborder="0" allowfullscreen></iframe>
+                <!--<img src="{{ "/assets/img/browser.png" | prepend: site.baseurl }}" class="img-responsive">-->
+                
+            </div>
+            <div class="col-lg-8 col-lg-offset-2" style="margin-top: 30px;">
+                
+                <a href="/download/" class="btn btn-primary btn-lg">Download v{{ site.version }}</a>
+                <a href="/demo" class="btn btn-primary btn-lg">Online Demo</a>
+            </div>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /headerwrap -->
 
-		<!-- Three -->
-			<section id="three" class="wrapper style1">
-				<header class="major">
-					<h2>Analyze Your Data</h2>
-					<p>Use ConnectorDB's built-in tools for data analysis.</p>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="8u">
-							<section>
-								<h2>PipeScript</h2>
-								<p>Perform data analysis using PipeScript, a tiny analysis pipeline built entirely for time series data. Do aggregations
-								and transformations on your data, all in a single line of code.</p>
-								<p>While it is an unfamiliar little language, <a href="/pipescript/docs/basics.html">the tutorial</a> should get you up to speed in no time at all.
-								You can also play around with it below. On the left is input data, and on the right is your script's result. A list of available transforms is available <a href="pipescript/#transforms">here</a>.</p>
-								<form>
-									<div style="width:100%;">
-										<div style="display:inline-block;width:80%;">
-										<input type="text" class="form-control" id="script" style="font-family:monospace;" value="map( $['activity'] , $['steps']:sum )">
-										</div>
-										<div style="display:inline-block;width:18%;">
-											<input type="submit" id="scriptbtn" ></input>
-										</div>
-									</div>
-									</form>
-									<div>
-										<div style="display:inline-block;width:45%;height: 200px;">
-											<textarea id="input" ></textarea>
-										</div>
-											<div style="display:inline-block;width:45%;height:200px;">
-											<textarea id="output"></textarea>
-										</div>
-									</div>
+<div class="container">
+        <div class="row centered">
+            <div class="col-md-12" style="margin-top: 30px;">
+                <h3>What is ConnectorDB?</h3>
+                <p>There already exist many apps and fitness trackers that gather and attempt to make sense of your data. 
+                Most of these services are isolated - your phone's fitness tracking software knows nothing about your browser's time-tracking extension. 
+                Furthermore, each app and service has its own method for downloading data (if they offer raw data at all!), 
+                which makes an all-encompassing analysis of life extremely tedious. ConnectorDB offers a self-hosted open-source alternative to these services.
+                It allows every device you have to synchronize with one central database, which allows creating an in-depth picture of your life.</p>
 
-							</section>
-						</div>
-						<div class="4u">
-							<section>
-								<h3>Sample Scripts</h3>
-								<ul class="alt">
-									<li><a href="javascript:getweekday()">Get the weekday for each datapoint</a></li>
-									<li><a href="javascript:getsteps()">Find average number of steps taken per day</a></li>
-									<li><a href="javascript:getwalking()">Get only the datapoints where you were walking</a></li>
-									<li><a href="javascript:getcount()">Get the total number of datapoints</a></li>
-									<li><a href="javascript:getmt()">Get both mean and total number of steps</a></li>
-									<li><a href="javascript:getsumsteps()">Return the sum of steps taken every other datapoint.</a></li>
-								</ul>
-								<script>
-								function getweekday() {
-										$("#script").val('weekday');
-										runScript();
-									}
-									function getsteps() {
-										$("#script").val('map( day, $["steps"]:sum ) | reduce(mean)');
-										runScript();
-									}
-									function getwalking() {
-										$("#script").val('if $["activity"] == "walking"');
-										runScript();
-									}
-									function getcount() {
-										$("#script").val('count | if last');
-										runScript();
-									}
-									function getsumsteps() {
-										$("#script").val('$["steps"] | reset(count%2==1, sum) | if count%2==0');
-										runScript();
-									}
-									function getmt() {
-										$("#script").val('$["steps"] | {"mean": mean, "total": sum} | if last');
-										runScript();
-									}
-								</script>
-							</section>
-							<hr />
-							<section>
-								<h3>Datasets</h3>
-								<p>Combine multiple streams of data into a tabular dataset using PipeScript's built-in interpolators. No need for manual looping or JOINs.</p>
-								<ul class="actions">
-									<li><a href="pipescript/docs/datasets.html" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
+                <p>The ConnectorDB API allows you total access to your data, and is built specifically with Machine Learning in mind.
+                Anyone with the technical knowledge can build and share programs that can extract insights from any data. 
+                To make Machine Learning easier, ConnectorDB also allows a supervision signal in the form of life ratings, 
+                enabling learning algorithms to optimize your goals directly.</p>
 
-
-						</div>
-					</div>
-				</div>
-			</section>
+                <p>In the future, having such a centralized database will enable truly smart devices.
+                Just like there are many disparate apps for self-tracking, current IoT devices seem to be unaware of anything but their own sensors.
+                With devices connected to a central life-server such as ConnectorDB, learning algorithms can be aware of everything.
+                You would not need to control your lights with an app - a central AI would set them to the perfect intensity based on everything from your stress level to your schedule. 
+                ConnectorDB and its successors will enable our surroundings to automatically adjust themselves to hopefully make our lives easier.</p>
+            </div>		 				
+        </div>
+    </div><! --/container -->
+<hr />
+<div id="service">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-md-4">
+                <i class="fa fa-heart-o"></i>
+                <h4>Handsomely Crafted</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-flask"></i>
+                <h4>Retina Ready</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-trophy"></i>
+                <h4>Quality Theme</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+            </div>		 				
+        </div>
+    </div><! --/container -->
+</div><! --/service -->

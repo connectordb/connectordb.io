@@ -1,54 +1,27 @@
-<!-- Footer -->
-<footer id="footer">
+<div id="footerwrap">
     <div class="container">
-        <div class="row double">
-            <div class="6u">
-                <div class="row collapse-at-2">
-                    <div class="6u">
-                        <h3>This Site</h3>
-                        <ul class="alt">
-                            <li><a href="{{ site.baseurl }}/">Home</a></li>
-                            <li><a href="{{ site.baseurl }}/clients.html">Clients</a></li>
-                            <li><a href="{{ site.baseurl }}/docs">Documentation</a></li>
-                            <li><a href="{{ site.baseurl }}/pipescript">PipeScript</a></li>
-                            <li><a href="{{ site.baseurl }}/download.html">Download</a></li>
-                        </ul>
-                    </div>
-                    <div class="6u">
-                        <h3>ConnectorDB</h3>
-                        <ul class="alt">
-                            <li><a href="https://github.com/connectordb">Github</a></li>
-                            <li><a href="https://connectordb.com">connectordb.com</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>This Site</h4>
+                <div class="hline-w"></div>
+                <p>
+                  <ul>
+                    {% for link in site.navigation %}
+                        <li><a href="{{ link.url }}" >{{ link.title }}</i></a></li>
+                    {% endfor %}
+                  </ul>
+                </p>
             </div>
-            <div class="6u">
-                <h2>Contribute</h2>
-                <p>ConnectorDB is a very new open-source project. If you are a designer/developer or ML enthusiast,
-                head on over to <a href="https://github.com/connectordb">the connectordb github</a>, where you can choose
-                which part of ConnectorDB you want to contribute towards! Any pull requests or bug reports are welcome!</p>
-                <ul class="icons">
-                    <li><a href="https://twitter.com/connectordb" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="https://github.com/connectordb" class="icon fa-github"><span class="label">Github</span></a></li>
-                </ul>
+            <div class="col-lg-8">
+                <h4>Contribute</h4>
+                <div class="hline-w"></div>
+                <p>
+                    ConnectorDB is a very new open-source project.
+                    If you are a designer/developer or ML enthusiast, head on over to the <a href="https://github.com/connectordb">connectordb github</a>,
+                    where you can choose which part of ConnectorDB you want to contribute towards!
+                    Pull requests or bug reports are welcome!
+                </p>
             </div>
-        </div>
-        <ul class="copyright">
-            <li>&copy; 2016 ConnectorDB Contributors. All rights reserved.</li>
-            <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-            <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-            <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
-        </ul>
-    </div>
-</footer>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70773947-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+        </div><!--/row -->
+    </div><!--/container -->
+</div><!--/footerwrap -->
