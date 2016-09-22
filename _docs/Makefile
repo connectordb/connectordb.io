@@ -28,7 +28,7 @@ pipesdocs:
 	go get -u github.com/connectordb/pipescript
 	go install github.com/connectordb/pipescript/pipes
 	rm -rf ./pipescript/transforms
-	pipes transforms dumpdocs ./pipescript/transforms
+	python ./pipescript.py
 
 
 .PHONY: help

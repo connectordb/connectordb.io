@@ -11,5 +11,5 @@ The goal of PipeScript is to make most data preparation a single line of code.
    :glob:
 
    Tutorial <tutorial/basics.md>
-   *
+   transforms/index.md
    Extending PipeScript <golang/index.rst>

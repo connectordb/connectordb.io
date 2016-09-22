@@ -1,1 +1,8 @@
 {% include css/style.css %}
+
+.pipescriptargs th,td {
+  padding: 15px;
+}
+.pipescriptargs {
+  width: 100%;
+}
