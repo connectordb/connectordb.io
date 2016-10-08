@@ -1,6 +1,6 @@
 ## SubPipes
 
-In the [last tutorial](./pipeline.html), we introduced pipelines.
+In the <a href="pipeline.html">last tutorial</a>, we introduced pipelines.
 
 ### Sub-Pipe
 
@@ -21,7 +21,7 @@ if( $("hi"):$("hello") == 4 )
 Internally, PipeScript treats each argument as a separate pipeline, whose input is connected to the parent's input.
 
 
-<img src="pipeline-structure.png" style="width: 100%" />
+<img src="/assets/docs/img/pipeline-structure.png" style="width: 100%" />
 
 
 In order for the parent to always get SOME result in its argument, sub-pipelines cannot include transforms that are not One-To-One (for each datapoint that they get as input, they output one datapoint). This means that you cannot nest if transforms. Whether a specific transform is one to one is listed in its documentation.
@@ -68,7 +68,7 @@ It splits datapoints along its first argument, and runs independent scripts on e
 },]
 ```
 
-We found the total number of steps for "running" in the [Pipeline tutorial](pipeline.html). We can now extend that to find the number of steps for each activity!
+We found the total number of steps for "running" in the <a href="pipeline.html">pipeline tutorial</a>. We can now extend that to find the number of steps for each activity!
 
 Remember that the code was:
 

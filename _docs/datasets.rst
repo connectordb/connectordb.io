@@ -18,8 +18,7 @@ being gathered at the same time. Each stream is independent, so they do not have
   |           |              |   | 11pm      | 79                   |
   +-----------+--------------+---+-----------+----------------------+
 
-While the independence of data streams is an extremely useful feature when it comes to gathering data, when attempting to gain insight from this data, it becomes difficult to put streams together into a form which is
-useful for analysis.
+While the independence of data streams is an extremely useful feature when it comes to gathering data, it makes putting streams together difficult.
 
 The ideal format for analysis would be a single table - the equivalent of a spreadsheet, where you have
 a temperature for each mood rating.
@@ -43,7 +42,7 @@ How to get there?
 -----------------------
 
 This is exactly the purpose of Datasets. A dataset is given a list of input data streams, and methods to use
-when putting the streams together (called <a href="./interpolators.html">interpolators</a>). It outputs a nice, tabular structure which can easily be used for analysis.
+when putting the streams together (called interpolators). It outputs a nice, tabular structure which can easily be used for analysis.
 
 There are 2 types of dataset: T-datasets and X-datasets
 
@@ -59,23 +58,32 @@ T-dataset
 
 A T-Dataset generates a dataset based upon timestamp. Suppose I have only one stream of data (although you can add as many as you want):
 
-
-| Timestamp    | Room Temperature (F) |
-|--------------|----------------------|
-| 1pm          | 73                   |
-| 4pm          | 84                   |
-| 8pm          | 79                   |
+  +--------------+----------------------+
+  | Timestamp    | Room Temperature (F) |
+  +--------------+----------------------+
+  | 1pm          | 73                   |
+  +--------------+----------------------+
+  | 4pm          | 84                   |
+  +--------------+----------------------+
+  | 8pm          | 79                   |
+  +--------------+----------------------+
 
 Now suppose I generate a T-Dataset from this data, from 12pm to 8pm, with an interval of dt=2 hours, using the interpolator `closest`. I would get the following result:
 
 
-| Timestamp    | Room Temperature (F) |
-|--------------|----------------------|
-| 12pm         | 73                   |
-| 2pm          | 73                   |
-| 4pm          | 84                   |
-| 6pm          | 84                   |
-| 8pm          | 79                   |
+  +--------------+----------------------+
+  | Timestamp    | Room Temperature (F) |
+  +--------------+----------------------+
+  | 12pm         | 73                   |
+  +--------------+----------------------+
+  | 2pm          | 73                   |
+  +--------------+----------------------+
+  | 4pm          | 84                   |
+  +--------------+----------------------+
+  | 6pm          | 84                   |
+  +--------------+----------------------+
+  | 8pm          | 79                   |
+  +--------------+----------------------+
 
 
 T-datasets are useful when you want to see how certain data changes over time, or want to plot multiple streams with same reference time.

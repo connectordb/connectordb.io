@@ -1,6 +1,6 @@
 ## Pipeline
 
-In the [last tutorial](./basics.html), the basic element of PipeScript was introduced. The Transform.
+In the <a href="basics.html">last tutorial</a>, the basic element of PipeScript was introduced. The Transform.
 
 To reiterate in more detail, a Transform can be:
 
@@ -57,7 +57,7 @@ First off, we want to pass through only the datapoints where we were running:
 if $("activity") == "running"
 ```
 
-Notice that the identity operator `$` accepts an argument - it allows you to return a sub-object of your Datapoint. Our result is:
+Notice that the identity operator "$" accepts an argument - it allows you to return a sub-object of your Datapoint. Our result is:
 
 ```json
 [

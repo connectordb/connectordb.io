@@ -41,6 +41,8 @@ Errors are logged with their reference number by ConnectorDB, so problems can ea
 
 ----------
 
+## API
+
 <style>
 h3 {text-transform: none;color: orange;font-weight: bold;font-size: 150%;}
 h4 {color: green;font-weight: bold;}
@@ -171,7 +173,7 @@ so its use is not recommended:
 
 ----------
 
-#### /api/v1/crud/{username}
+#### /api/v1/crud/{user}
 
 ##### GET
 
@@ -214,7 +216,7 @@ Deletes the user. Returns error if user doesn't exist or not enough permissions.
 ----------
 
 
-#### /api/v1/crud/{username}/{devicename}
+#### /api/v1/crud/{user}/{device}
 
 ##### GET
 
@@ -248,7 +250,7 @@ Deletes the device. Returns error if it doesn't exist or not enough permissions.
 
 ----------
 
-#### /api/v1/crud/{username}/{devicename}/{streamname}
+#### /api/v1/crud/{user}/{device}/{stream}
 
 ##### GET
 
@@ -277,7 +279,7 @@ Deletes the stream. Returns error if it doesn't exist or not enough permissions.
 
 ----------
 
-#### /api/v1/crud/{username}/{devicename}/{streamname}/data
+#### /api/v1/crud/{user}/{device}/{stream}/data
 
 ##### GET
 
@@ -346,7 +348,7 @@ timestamps rewritten to be the same as the last existing datapoint in the databa
 
 ----------
 
-#### /api/v1/feed/{username}/{devicename}/{streamname}
+#### /api/v1/feed/{user}/{device}/{stream}
 
 ##### GET
 

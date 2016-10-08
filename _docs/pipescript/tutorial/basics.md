@@ -6,7 +6,7 @@ It is highly recommended that you follow along with the tutorial and experiment 
 
 <a href="/pipescript" class="button alt"><i class="fa fa-pencil-square-o"></i> PipeScript Online Editor</a>
 
-You can also find the [list of available transforms](/pipescript/#transforms) by scrolling down on the online editor's page.
+You should also look at <a href="../transforms/index.html">the list of available transforms</a>.
 
 ## Datapoint
 
@@ -19,32 +19,6 @@ The data that PipeScript accepts consists of a stream of Datapoints, each of whi
 }
 ```
 
-
-## Data Conversion
-When importing data to ConnectorDB, or when the `pipes` executable attempts to convert your data, it is always converted into the above format.
-
-For example, if you have a CSV file:
-
-```
-timestamp,                       steps_taken, activity_type
-Tuesday, 12-Jan-16 00:27:09 UTC,         234,        walking
-...
-```
-
-then the first datapoint of your stream will be
-
-```json
-{
-    "t": 1452558429.0,
-    "d": {
-           "steps_taken": "234",
-           "activity_type": "walking"
-         }
-}
-```
-
-Don't worry if certain fields are not the correct type ("steps_taken" is "234", which is a string). PipeScript transparently converts data into the relevant types during processing.
-
 ## Starting Out
 
 For the next few examples, we will use the following data:
@@ -54,7 +28,7 @@ For the next few examples, we will use the following data:
 {"t": 124, "d": "1"},
 {"t": 124, "d": 0.1},
 {"t": 124, "d": -50},
-{"t": 124, "d": "true"}]
+{"t": 124, "d": true}]
 ```
 
 This isn't particularly realistic data, since the time stamp is weird, and there is this "true" in the dataset, but it will do for our purposes.
@@ -81,7 +55,7 @@ Running the above PipeScript returns:
 
 #### So what happened here?
 
-PipeScript is a stream processing language. This means that your script is executed in order for every datapoint individually. Using the built-in `$` transform, which is the identity (ie, it always just returns the datapoint it gets), we can get our result in the data section of a new stream of datapoints.
+PipeScript is a stream processing language. This means that your script is executed in order for every datapoint individually. Using the built-in "$" transform, which is the identity (ie, it always just returns the datapoint it gets), we can get our result in the data section of a new stream of datapoints.
 
 Also notice that the boolean was automatically converted to a number. In PipeScript, `false==0` and `true==1`.
 
