@@ -16,3 +16,4 @@ ConnectorDB can be used to manage the smart home, and control your IoT devices, 
    Datasets <datasets.rst>
    Python API <http://connectordb-python.readthedocs.io/en/latest/>
    REST API <restapi.md>
+   Permissions <permissions.md>
