@@ -2,6 +2,8 @@
 
 cd "$( dirname "${BASH_SOURCE[0]}")"
 
+mkdir -p docs
+
 cd _docs
 make
 cd ..
