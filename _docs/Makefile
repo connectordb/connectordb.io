@@ -27,7 +27,6 @@ mkdocs: html
 pipesdocs:
 	go get -u github.com/connectordb/pipescript
 	go install github.com/connectordb/pipescript/pipes
-	rm -rf ./pipescript/transforms
 	python ./pipescript.py
 
 

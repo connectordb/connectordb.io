@@ -6,7 +6,8 @@ tpath = "./pipescript/transforms/"
 
 import os
 import shutil
-shutil.rmtree(tpath)
+if os.path.exists(tpath):
+    shutil.rmtree(tpath)
 os.makedirs(tpath)
 
 # http://stackoverflow.com/questions/706989/how-to-call-an-external-program-in-python-and-retrieve-the-output-and-return-cod
