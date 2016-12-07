@@ -27,3 +27,12 @@
       border-radius:125px / 12px;  
       box-shadow:0 0 8px black;
     }
+
+@media only screen and (min-width: 767px) and (max-width: 990px) {
+    .vertical-center {
+      position: relative;
+      top: 50%;
+      transform: translateY(50%);
+    }
+}
+
