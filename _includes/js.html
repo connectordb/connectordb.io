@@ -92,9 +92,23 @@
 		$container.imagesLoaded(function () {
 			setPortfolio();
 		});
+		
+		function githubBanner() {
+		    if ($(window).width() > 1400) {
+		        $("#githubbanner").show();
+		        $("#navgbanner").hide();
+		    } else {
+		        $("#githubbanner").hide();
+		        $("#navgbanner").show();
+		    }
+		}
+		githubBanner();
 
-		$(window).on('resize', function () {
+		$(window).on('resize', function (e) {
 		setPortfolio();
+		
+		githubBanner();
+		
 	});
 })(jQuery);
 </script>
