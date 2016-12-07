@@ -4,21 +4,22 @@ title: Home
 permalink: /
 ---
 
-<div id="headerwrap">
+<div id="headerwrap" style='background-color: #384452; background: linear-gradient(#384452,#384452 50%, #204b7c);'>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+        <div class="row" >
+            <div class="col-lg-8 col-lg-offset-2" >
                 <h3>Your personal Life Server</h3>
                 <h1><img src="{{ "/assets/img/title_logo_light.png" | prepend: site.baseurl }}" class="img-responsive" style="max-width: 600px;"></h1>
                 <h5>An open-source platform for Quantified Self and IoT</h5>
                 				
             </div>
+            <!--
             <div class="col-lg-8 col-lg-offset-2 himg" style="margin-top: 30px;">
             <h1>VIDEO PLACEHOLDER</h1>
-                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/njos57IJf-0" frameborder="0" allowfullscreen></iframe>-->
-                <!--<img src="{{ "/assets/img/browser.png" | prepend: site.baseurl }}" class="img-responsive">-->
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/njos57IJf-0" frameborder="0" allowfullscreen></iframe>--.>
+                <!--<img src="{{ "/assets/img/browser.png" | prepend: site.baseurl }}" class="img-responsive"> --. >
                 
-            </div>
+            </div>-->
             <div class="col-lg-8 col-lg-offset-2" style="margin-top: 30px;">
                 
                 <a href="/download/" class="btn btn-primary btn-lg">Download v{{ site.version }}</a>
@@ -29,50 +30,172 @@ permalink: /
 </div><!-- /headerwrap -->
 
 <div class="container">
-        <div class="row centered">
-            <div class="col-md-12" style="margin-top: 30px;">
-                <h3>What is ConnectorDB?</h3>
-                <p>There already exist many apps and fitness trackers that gather and attempt to make sense of your data. 
-                Most of these services are isolated - your phone's fitness tracking software knows nothing about your browser's time-tracking extension. 
-                Furthermore, each app and service has its own method for downloading data (if they offer raw data at all!), 
-                which makes an all-encompassing analysis of life extremely tedious. ConnectorDB offers a self-hosted open-source alternative to these services.
-                It allows every device you have to synchronize with one central database, which allows creating an in-depth picture of your life.</p>
-
-                <p>The ConnectorDB API allows you total access to your data, and is built specifically with Machine Learning in mind.
-                Anyone with the technical knowledge can build and share programs that can extract insights from any data. 
-                To make Machine Learning easier, ConnectorDB also allows a supervision signal in the form of life ratings, 
-                enabling learning algorithms to optimize your goals directly.</p>
-
-                <p>In the future, having such a centralized database will enable truly smart devices.
-                Just like there are many disparate apps for self-tracking, current IoT devices seem to be unaware of anything but their own sensors.
-                With devices connected to a central life-server such as ConnectorDB, learning algorithms can be aware of everything.
-                You would not need to control your lights with an app - a central AI would set them to the perfect intensity based on everything from your stress level to your schedule. 
-                ConnectorDB and its successors will enable our surroundings to automatically adjust themselves to hopefully make our lives easier.</p>
-            </div>		 				
+    <div class="row centered">
+        <div class="col-md-12" style="margin-top: 30px;margin-bottom: 30px;">
+            <h2>How to use ConnectorDB?</h2>
         </div>
+    </div>
+    <div class="row centered" >
+        <div class="col-md-5">
+            <img src="/assets/img/devices.png" style="width: 100%;" />
+        </div>
+        <div class="col-md-7">
+            <h3 style="color: grey">Step 1</h3>
+                <h3 style="color:#0080DA;padding-bottom: 30px;">Connect your Devices</h3>
+            <ul style="font-size: 15; text-align: left">
+            <li><h4>Install the Open-Source Tracking Apps</h4>
+            You don't need to export data from proprietary sources, ConnectorDB's companion apps automatically gather data from your phone, your laptop,
+            and your browser in the background, syncing directly to your computer.
+            </li>
+            <li><h4>Create Your Own Devices</h4>
+            ConnectorDB comes with a powerful <a href="/docs/{{ site.version }}/restapi.html"> REST API</a>, as well as an easy-to-use <a href="http://connectordb-python.readthedocs.io/en/latest/">python library</a>, allowing you to create your own data-gathering applications, and to perform advanced data analysis. You can also set up "downlinks", to control things directly from ConnectorDB, allowing you to automate parts of your life in response to your data.</li>
+            </ul>
+        
+        </div>
+    </div>
+    
+    <div class="row centered" >
+        <div class="col-md-12">
+        <div class="or-spacer">
+      <div class="mask"></div>
+        </div>
+        </div>
+    </div>
+    
+    
+    <div class="row centered" style="padding-top: 80px;">
+        <div class="col-md-6">
+            <h3 style="color: grey">Step 2</h3>
+                <h3 style="color:#0080DA;padding-bottom: 30px;">Record your Mood & Productivity</h3>
+            <ul style="font-size: 15; text-align: left">
+            <li><h4>Rate how aspects of your life are going</h4>
+            Star ratings are built into ConnectorDB, as are logs (diaries). Rating things will allow you
+            to quickly perform analysis of several months of data. You might even be able to correlate it with things gathered by your devices. Imagine computing the effect
+            of exercise on your productivity several days later - or whether the average sentiment of the websites you visit
+            is correlated with your mood.
+            </li>
+            <li><h4>Manually Track anything you want</h4>
+            Not everything can be gathered by your phone or laptop. ConnectorDB allows manually inputting arbitrary data.
+            Manually track your weight or calories, and later correlate it with the exercise/fitness data gathered by your phone.</li>
+            </ul>
+            
+        </div>
+        <div class="col-md-6">
+            <img src="/assets/img/ratings.png" style="width: 100%;" />
+        </div>
+        
+    </div>
+    
+    
+    <div class="row centered" >
+        <div class="col-md-12">
+        <div class="or-spacer">
+      <div class="mask"></div>
+        </div>
+        </div>
+    </div>
+    
+    
+    <div class="row centered" style="padding-top: 80px;">
+        
+        <div class="col-md-8">
+            <img src="/assets/img/plot.png" style="width: 100%;" />
+        </div>
+        
+        <div class="col-md-4">
+            <h3 style="color: grey">Step 3</h3>
+                <h3 style="color:#0080DA;padding-bottom: 30px;">Visualize Your Data</h3>
+            <ul style="font-size: 15; text-align: left">
+            <li><h4>Automatic Plots</h4>
+            ConnectorDB automatically plots many types of data, and support for more data types is being actively added.
+            You simply click on a data stream to immediately get visualizations of the data.
+            </li>
+            <li><h4>Filter & Transform</h4>
+            A special filtering and transform language, called PipeScript was developed for the time series data gathered by ConnectorDB. Common analysis tasks can be done in a single line of code!</li>
+            </ul>
+            
+        </div>
+        
+    </div>
+    
+    
+    <div class="row centered" >
+        <div class="col-md-12">
+        <div class="or-spacer">
+      <div class="mask"></div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="row centered" style="padding-top: 80px;">
+        
+        <div class="col-md-12">
+            <h3 style="color: grey">Step 4</h3>
+                <h3 style="color:#0080DA;padding-bottom: 30px;">The Future</h3>
+                <h4>You are now gathering data about your life</h4>
+                <p style="font-weight: bold; margin-bottom: 50px;"> Even if you don't find the time, or don't have the skill to analyze your data now, your data will be ready for future analysis...</p>
+            <ul style="font-size: 15; text-align: left">
+            <li><h4>Wouldn't it be awesome if ConnectorDB could give you recommendations?</h4>
+            The promise of exploiting the latest advances in Machine Learning to gain deep insight into our lives is the
+            underlying reason that ConnectorDB was created. ConnectorDB is a very young project, and
+            won't have its 1.0 release until this feature is implemented. Unfortunately, many of the most powerful algorithms require thousands of datapoints before they gain suficient accuracy. The data gathered now will allow you to jump right into gaining the benefits of this feature once it becomes available.
+            </li>
+            <li><h4>What if ConnectorDB could control things?</h4>
+            Imagine for a moment that your house thermostat, lights, and various appliances are all connected to ConnectorDB as "downlinks". What if ConnectorDB's AI could control all of these automatically, using your data and feedback? Your coffee would be ready in the morning. Your lights would be dimmed to the perfect degree, and your thermostat would keep the temperature perfectly aligned to your body's needs... Wouldn't that be something.
+            </li>
+            <li><h4>What if insights gained could help everyone?</h4>
+            Perhaps you wonder sometimes, what makes the most successful people tick? How could you be more like your heroes?
+            What if some people released the AI trained on their data? Insights that you might never have stumbled upon yourself
+            could be used to help you. Most importantly, ConnectorDB is open-source, and private. Nobody can use your data or AI against you without first taking control of your computer. We would like to enable insight-sharing without sacrificing privacy and trust.
+            </li>
+            </ul>
+            
+        </div>
+        
+    </div>
+    
+        
+        <div class="row centered" >
+        <div class="col-md-12">
+        <div class="or-spacer">
+      <div class="mask"></div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="row centered" style="padding-top: 80px;">
+        
+        <div class="col-md-12">
+                <h3 style="color:#0080DA;padding-bottom: 30px;">What do you Think?</h3>            
+        </div>
+        
+    </div>
+    
     </div><! --/container -->
 <hr />
-<div id="service">
+<div id="service" style="padding-bottom: 100px;">
     <div class="container">
         <div class="row centered">
             <div class="col-md-4">
-                <i class="fa fa-heart-o"></i>
-                <h4>Handsomely Crafted</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-            </div>
-            <div class="col-md-4">
-                <i class="fa fa-flask"></i>
-                <h4>Retina Ready</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-            </div>
-            <div class="col-md-4">
-                <i class="fa fa-trophy"></i>
-                <h4>Quality Theme</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-            </div>		 				
+            <i class="fa fa-download"></i>
+            <h4>Download</h4>
+            <p>Try it out on your computer! You can even run the ConnectorDB server on a Raspberry Pi! You can have your own copy of ConnectorDB set up, and gathering data in only a couple minutes.</p>
+            <p><br/><a href="/download/" class="btn btn-theme">v{{ site.version }}</a></p>
+        </div>
+        
+        <div class="col-md-4">
+            <i class="fa fa-heart-o"></i>
+            <h4>Contribute</h4>
+            <p>Every piece of code written for ConnectorDB is open-sourced under the MIT license. If you think ConnectorDB's
+            goals match your own, how about contributing to the project?</p>
+            <p><br/><a href="https://github.com/connectordb/connectordb" class="btn btn-theme">Github</a></p>
+        </div>			
+        <div class="col-md-4">
+            <i class="fa fa-btc"></i>
+            <h4>Donate</h4>
+            <p>Don't have time to help out? How about donating?</p>
+            <p style="background-color: white">18hpAnL31w2LHXnVjzVrcp9bAFcwdz2gn3</p>
+        </div>	
         </div>
     </div><! --/container -->
 </div><! --/service -->

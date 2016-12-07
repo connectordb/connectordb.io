@@ -21,7 +21,7 @@
 	}
 
 body {
-	background: #ffffff;
+	background: rgb(240,240,240);
 	margin: 0;
 	height: 100%;
 	color: {{ site.colors.secondary }};
