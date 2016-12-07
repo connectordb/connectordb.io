@@ -29,7 +29,7 @@ navigation:
   - title: Blog
     url: "/blog/"
   - title: Docs
-    url: "/docs/0.3.0b1/"
+    url: "/docs/0.3.0a2/"
   - title: Demo
     url: "/demo/"
   - title: Download
