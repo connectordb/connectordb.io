@@ -1,10 +1,44 @@
 ---
 layout: default
-title: Demo
+title: Online Demo
 permalink: /demo/
 ---
 {% include wrap.html %}
 <div class="container mtb">
+<div class="row" style="margin-bottom: 30px">
+    <div class="col-md-12 centered">
+        <h2 style="color:#0080DA;">Demo Server</h2>
+                <h4>Username: demo</h4>
+                <h4>Password: demo</h4>
+                <a href="https://demo.connectordb.io" class="btn btn-primary btn-lg" style="margin-top: 20px;"> Log In</a>
+    </div>
+</div>
     <div class="row">
+        <div class="col-md-8" style="padding-top: 20px;">
+            <h3>Demo Details</h3>
+            <p style="font-weight: bold;">The demo server simulates a user with 3 months of sample data.</p>
+            <ul style="font-size: 15; text-align: left">
+                <li><h4>Laptop Logger</h4>
+                The simulated user installed the laptop-logger along with ConnectorDB, and it has been gathering usage information
+                on the computer. You can see the sample data by clicking on the "Laptop" device.
+                </li>
+                <li><h4>Android App</h4>
+                The android app is set up to run in the background, and gathers the user's location and activity data.
+                The app's sample data is available under the "Android" device.</li>
+                <li><h4>Chrome Extension</h4>
+                The chrome extension gathers the URL and window title of every web page visited. You can quickly see sample data
+                in the "chrome" device.</li>
+                <li><h4>Ratings</h4>
+                The sample data contains mood and productivity ratings, as well as a diary/log.</li>
+            </ul>
+            <p style="font-style: italic;">The demo server has data-entry disabled, so you won't be able to add or remove data.</p>
+            
+            <div style="text-align: center; display: block; padding: 10px">
+                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img src="/assets/img/android-screenshot.png" style="width: 100%;" />
+        </div>
     </div>
 </div>
