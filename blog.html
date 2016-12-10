@@ -13,17 +13,17 @@ permalink: /blog/
             {% for post in site.categories['blog'] %}
                 <!-- Blog Post -->
                 {% if post.img != null %}
-                <a href="{{ post.url | prepend: site.baseurl }}">
+                <a href="{{ post.url | prepend: site.baseurl }}.html">
                     <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
                 </a>
                 {% endif %}
-                <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
+                <a href="{{ post.url | prepend: site.baseurl }}.html"><h3 class="ctitle">{{ post.title }}</h3></a>
                 <p><csmall>{{ post.date | date: "%b %-d, %Y" }}. | By: {{ post.author }}</csmall></p>
                 {{ post.excerpt }}
 
                 {% assign hasmore = post.content | split:site.excerpt_separator | size %}
                 {% if hasmore > 1 %}
-                <p><a href="{{ post.url | prepend: site.baseurl }}">[Read More]</a></p>
+                <p><a href="{{ post.url | prepend: site.baseurl }}.html">[Read More]</a></p>
                 {% endif %}
                 <div class="hline"></div>
 
