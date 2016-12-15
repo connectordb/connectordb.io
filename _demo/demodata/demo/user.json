@@ -1,0 +1,12 @@
+{
+	"name": "demo",
+	"nickname": "",
+	"email": "support@connectordb.com",
+	"description": "",
+	"icon": "",
+	"role": "user",
+	"public": true,
+	"password": "$2a$10$00tLl/yGX3yMm7hq2XBSsesBaA3ViIPfdJy2Xud9rums2OHBvJ7Dq",
+	"password_salt": "edb88e3c-8d52-4d4a-438e-2f8b4a97544c",
+	"password_scheme": "bcrypt"
+}

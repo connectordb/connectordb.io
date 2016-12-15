@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cd "$( dirname "${BASH_SOURCE[0]}")"
+
+if [ -d "demodb" ]; then
+  # An existing ConnectorDB demo database exists
+  connectordb stop demodb
+  rm -rf demodb
+fi
+
+# Create a new demo database
+connectordb create demodb -c connectordb.conf
+
+# Start the database
+connectordb start demodb
+
+# Import the data
+connectordb import demodb demodata

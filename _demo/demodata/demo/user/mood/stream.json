@@ -1,0 +1,10 @@
+{
+	"name": "mood",
+	"nickname": "",
+	"description": "How happy I am with life",
+	"icon": "material:star",
+	"schema": "{\"type\":\"integer\",\"minimum\":0,\"maximum\":10}",
+	"datatype": "rating.stars",
+	"ephemeral": false,
+	"downlink": false
+}
