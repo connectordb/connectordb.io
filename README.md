@@ -8,8 +8,8 @@ This repository contains the full website of the ConnectorDB open source project
 To build the docs and website, you will need [jekyll](https://jekyllrb.com/) and [sphinx](http://www.sphinx-doc.org/en/1.4.8/). You will also need to install [recommonmark](https://recommonmark.readthedocs.io/en/latest/):
 
 ```bash
-git clone https://github.com/connectordb/connectordb.github.io
-cd connectordb.github.io
+git clone https://github.com/connectordb/connectordb.io
+cd connectordb.io
 
 apt-get install jekyll python-sphinx
 pip install recommonmark

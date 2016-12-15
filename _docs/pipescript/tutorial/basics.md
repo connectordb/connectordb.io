@@ -117,7 +117,7 @@ Transforms can be called using both a bash-like syntax `function arg1 arg2 arg3`
 
 ## Using Transforms
 
-PipeScript has many built-in transform functions. A list of the ones available in the most recent version of ConnectorDB is available [here](https://connectordb.github.io/docs/transforms.html).
+PipeScript has many built-in transform functions. A list of the ones available in the most recent version of ConnectorDB is available [here](https://connectordb.io/docs/transforms.html).
 
 To get you started, here are a couple particularly useful scripts that don't require knowledge of pipelines:
 
