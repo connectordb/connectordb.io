@@ -64,7 +64,7 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 	rm -rf ./pipescript/transforms
-	rm -rf ../docs/$(CDBVERSION)
+	rm -rf ../docs
 
 .PHONY: html
 html:
