@@ -20,8 +20,8 @@ default: mkdocs
 
 .PHONY: mkdocs
 mkdocs: html
-	rm -rf ../docs/$(CDBVERSION)
-	mv $(BUILDDIR)/html/ ../docs/$(CDBVERSION)
+	rsync -a $(BUILDDIR)/html/ ../docs
+	rsync -a $(BUILDDIR)/html/ ../docs/$(CDBVERSION)
 
 .PHONY: pipesdocs
 pipesdocs:

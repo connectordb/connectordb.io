@@ -1,63 +1,59 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="{{ " /favicon.ico " | prepend: site.baseurl }}">
 
-    <title>{% if page.title %}{{ page.title }} - {% endif %} {{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %} {{ site.title }}</title>
 
-    {% if page.redirect_docs != null %}
-    <meta http-equiv="refresh" content="0;url=/docs/{{ site.version }}" />
-    {% endif %}
+  {% if page.redirect_docs != null %}
+  <meta http-equiv="refresh" content="0;url=/docs/{{ site.version }}" /> {% endif %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ "/assets/css/bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ " /assets/css/bootstrap.min.css " | prepend: site.baseurl }}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ "/assets/css/style.css" | prepend: site.baseurl }}" rel="stylesheet">
-    <link href="{{ "/assets/css/font-awesome.min.css" | prepend: site.baseurl }}" rel="stylesheet">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <!-- The following CSS is used for pages in docs -->
-    {% assign curpg = page.url | remove_first:"/" | split:"/" | first | prepend:"/" %}
-    {% if curpg == "/docs" and page.url != "/docs" and page.url != "/docs/" %}
-
-    {% assign curversion = page.url | remove_first:"/docs/" | split:"/" | first %}
-
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '/docs/{{ curversion }}/',
-        VERSION:     '{{ curversion }}',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
-    <link href="{{ "/assets/docs/pygments.css" | prepend: site.baseurl }}" rel="stylesheet">
-    <link href="{{ "/assets/docs/doctheme.css" | prepend: site.baseurl }}" rel="stylesheet">
-
-    <script src="{{ "/assets/docs/websupport.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/assets/docs/underscore.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/assets/docs/doctools.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/assets/docs/searchtools.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/assets/docs/searchtools.js" | prepend: site.baseurl }}"></script>
-    <script src="/docs/{{ curversion }}/searchindex.js"></script>
-    {% endif %}
-
-    <!-- Custom CSS -->
-    <!--<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">-->
+  <!-- Custom styles for this template -->
+  <link href="{{ " /assets/css/style.css " | prepend: site.baseurl }}" rel="stylesheet">
+  <link href="{{ " /assets/css/font-awesome.min.css " | prepend: site.baseurl }}" rel="stylesheet">
 
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- The following CSS is used for pages in docs -->
+  {% assign curpg = page.url | remove_first:"/" | split:"/" | first | prepend:"/" %} {% if curpg == "/docs" and page.url !=
+  "/docs" and page.url != "/docs/" %} {% assign curversion = page.url | remove_first:"/docs/" | split:"/" | first %}
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: '/docs/{{ version }}/',
+      VERSION: '{{ version }}',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: false,
+      SOURCELINK_SUFFIX: ''
+    };
+  </script>
+<link href="{{ " /assets/docs/pygments.css " | prepend: site.baseurl }}" rel="stylesheet">
+<link href="{{ " /assets/docs/doctheme.css " | prepend: site.baseurl }}" rel="stylesheet">
+
+<script src="{{ " /assets/docs/websupport.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /assets/docs/underscore.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /assets/docs/doctools.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /assets/docs/searchtools.js " | prepend: site.baseurl }}"></script>
+<script src="/docs/{{ version }}/searchindex.js"></script>
+{% endif %}
+
+<!-- Custom CSS -->
+<!--<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">-->
+
+
+<!-- Just for debugging purposes. Don't actually copy this line! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
