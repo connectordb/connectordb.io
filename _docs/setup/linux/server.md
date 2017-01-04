@@ -5,7 +5,9 @@ This tutorial assumes that you have already set up a server.
 
 ## Dependencies
 
-To start off, you need to make sure that you have all of the necessary dependencies. ConnectorDB needs recent versions of both Postgres and Redis installed:
+To start off, you need to make sure that you have all of the necessary dependencies.  Be warned that Debian jessie packages are not sufficient; specifically ConnectorDB requires Redis >= 3, golang >= 1.6, and node-js >= 4.  Debian stretch will provide sufficient versions of Redis and golang only.  Node for Debian may be downloaded at https://github.com/nodesource/distributions .
+
+ConnectorDB needs recent versions of both Postgres and Redis installed:
 
 ```bash
 sudo apt-get install postgresql redis-server
@@ -18,6 +20,14 @@ sudo systemctl disable postgresql.service
 sudo systemctl stop postgresql.service
 sudo systemctl disable redis-server.service
 sudo systemctl stop redis-server.service
+```
+
+The API tests will require a couple python packageS:
+
+```bash
+sudo apt-get install python-coverage python-websocket python-jsonschema
+# or simply
+pip install connectordb
 ```
 
 Next, download the ConnectorDB binaries. Only 64 bit linux is supported at this time.
