@@ -21,7 +21,7 @@ colors:  #in hex code if not noted else
   footer_heading: "#ffffff"
   footer_content: "#bfc9d3"
 
-version: 0.3.0a2
+version: 0.3.0
 
 navigation:
   - title: Home
