@@ -13,7 +13,7 @@ ConnectorDB can be used to manage the smart home, and control your IoT devices, 
    Tutorials <tutorials/index.rst>
    Installing <setup/index.rst>
    Transforms <pipescript/index.rst>
-   Datasets <datasets.rst>
+   Datasets <datasets/index.rst>
    Python API <http://connectordb-python.readthedocs.io/en/latest/>
    REST API <restapi.md>
    Permissions <permissions.md>
