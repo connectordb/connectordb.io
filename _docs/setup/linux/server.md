@@ -178,3 +178,11 @@ Remember that you will have to decrypt your database folder each time you restar
 ```
 ./cryptify -i mydatabase.crypt -o mydatabase open
 ```
+
+#### Backups
+
+You can perform a backup of your entire ConnectorDB database on a running server by running this command:
+
+```
+connectordb export mydatabase ./exportfolder
+```

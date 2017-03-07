@@ -1,5 +1,5 @@
 
-Installing ConnectorDB
+Setting Up ConnectorDB
 =======================================
 
 Please choose the instructions specific to your OS.
@@ -15,3 +15,5 @@ the second is for setting up a powerful internet-accessible linux server running
   Windows <windows.md>
   Linux <linux.rst>
   Mac <mac.md>
+
+  Upgrading <upgrading.md>
