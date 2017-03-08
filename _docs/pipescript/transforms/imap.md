@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # imap
 *Same as map, but returns all intermediate values (is one to one)*
 

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # remember
 *Behaves as a single-datapoint memory cell, which is reset when its first argument is true.*
 

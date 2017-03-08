@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # sentiment
 *Returns a value in [-1,1] as a simple measure of a text's sentiment*
 

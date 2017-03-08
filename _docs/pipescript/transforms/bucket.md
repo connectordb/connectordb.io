@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # bucket
 *Puts numbers into custom-sized buckets. Useful for histograms.*
 

@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # ifelse
 *A conditional. This is what an if statement would be in other languages.*
 

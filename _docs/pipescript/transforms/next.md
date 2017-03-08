@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # next
 *Returns the datapoint that will be next in the sequence. If given an argument, can return the nth datapoint forward.*
 

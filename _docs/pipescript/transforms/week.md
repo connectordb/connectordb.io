@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # week
 *Returns the number of weeks since Jan 5 1970 (First Monday after unix time) in the given time zone.*
 

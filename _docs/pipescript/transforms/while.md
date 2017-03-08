@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # while
 *Equivalent to a while loop that runs while the first argument is true. Restarts the loop when the argument is false.*
 

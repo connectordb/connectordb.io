@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # filter
 *Takes a json object, and considers each field to be a separate datapoint's data.
 It removes all elements for which its first argument returns true (filters).*

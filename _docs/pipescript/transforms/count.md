@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # count
 *Counts the number of datapoints that have been seen. It is equivalent to the i in a loop over the sequence.*
 

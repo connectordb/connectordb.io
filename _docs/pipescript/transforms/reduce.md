@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # reduce
 *Takes a json object, and considers each field to be a separate datapoint's data.
 It then hijacks its argument, and performs the given transform on all of the fields, returning the result.*

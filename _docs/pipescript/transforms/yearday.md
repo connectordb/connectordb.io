@@ -1,3 +1,5 @@
+<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
+
 # yearday
 *Returns the day of the year during which the datapoint happened [1,365] non-leap, and [1,366] for leap years.*
 

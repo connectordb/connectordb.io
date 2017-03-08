@@ -25,7 +25,8 @@ o =json.loads(output.decode('utf-8'))
 # First generate the transform files
 for transform in o:
     t = o[transform]
-    md = "# "+transform + "\n*"+o[transform]["description"] + "*\n\n" + o[transform]["documentation"] + "\n\n---\n\n"
+    md = "<!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->\n\n"
+    md += "# "+transform + "\n*"+o[transform]["description"] + "*\n\n" + o[transform]["documentation"] + "\n\n---\n\n"
 
     if not "ischema" in t:
         t["ischema"] = ""
