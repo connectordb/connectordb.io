@@ -2,6 +2,7 @@
 This file gets the pipescript documentation directly from the pipes executable, and generates the desired pages for documentation
 """
 
+ipath = "./pipescript/"
 tpath = "./pipescript/transforms/"
 
 import os
@@ -52,16 +53,29 @@ for transform in o:
         f.write(md)
 
 # And finally, we write the index page, which holds the list of transforms
-md = "# List of Transforms\n\n*The following is a list of all transforms built into PipeScript & ConnectorDB. Click on a transform to see details and examples of use.*\n\n"
+def mkindex(prepend="./"):
+    md = "## List of Transforms\n\n*The following is a list of all transforms built into PipeScript & ConnectorDB. Click on a transform to see details and examples of use.*\n\n"
 
-md+= '<div id="searchable"><input class="search search-query form-control" type="text" placeholder="Search"><br><table class="table table-striped table-bordered" id="ftable"><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody class="list">'
+    md+= '<div id="searchable"><input class="search search-query form-control" type="text" placeholder="Search"><br><table class="table table-striped table-bordered" id="ftable"><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody class="list">'
 
-for transform in o:
-    t = o[transform]
-    md += "<tr><td class='fname'><a href='./"+transform+".html'>" + transform + "</a></td><td class='fdesc'>" + t["description"] + "</td></tr>"
+    for transform in o:
+        t = o[transform]
+        md += "<tr><td class='fname'><a href='"+ prepend+transform+".html'>" + transform + "</a></td><td class='fdesc'>" + t["description"] + "</td></tr>"
 
-md += "</tbody></table></div>"
-# Add list.js which will allow searching
-md += '<script type="text/javascript" src="/assets/js/list.min.js"></script><script>var flist = new List("searchable",{valueNames:["fname","fdesc"]});</script>\n\n'
+    md += "</tbody></table></div>"
+    # Add list.js which will allow searching
+    md += '<script type="text/javascript" src="/assets/js/list.min.js"></script><script>var flist = new List("searchable",{valueNames:["fname","fdesc"]});</script>\n\n'
+    return md
+
+md = mkindex()
+
 with open(tpath + "index.md","w") as f:
+    f.write(md)
+
+md = mkindex("./transforms/")
+with open(ipath + "index.md","w") as f:
+    f.write("<!-- THIS FILE IS AUTO-GENERATED. Modify index_start.md for text, and pipescript.py for table.-->\n\n")
+    with open(ipath + "index_start.md","r") as r:
+        f.write(r.read())
+    f.write("\n\n")
     f.write(md)
