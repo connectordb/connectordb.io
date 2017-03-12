@@ -183,6 +183,16 @@ Gets the user. Returns error if user doesn't exist or you have no access to the 
 
 Lists the user's devices
 
+###### GET ?q=streams&public=true&visible=true&downlink=true
+
+Allows to directly query for a user's streams given 3 filtering criteria.
+
+- `public` filters all non-public streams when set to true
+- `visible` filters all hidden streams when set to true
+- `downlink` only returns streams marked as downlink when set to true
+
+Each stream has an additional `device` field, containing the name of the owning device.
+
 
 ##### POST
 
@@ -383,10 +393,12 @@ The Merge query is given a list of stream queries to merge (stream queries are s
 ```
 [
 {
-	"stream": "user1/device1/stream1"
+	"stream": "user1/device1/stream1",
+	"t1": ...
 },
 {
-	"stream": "user2/device2/stream2"
+	"stream": "user2/device2/stream2",
+	"t1": ...
 }
 ]
 ```
@@ -408,12 +420,12 @@ The dataset query encodes two query types: both t-datasets and x-datasets.
 	"dt": 100,
 	"dataset": {
 		"stream1": {
-			"user1/device1/stream1"
-			...
+			"stream": "user1/device1/stream1",
+			"interpolator": "closest"
 		},
 		"stream2": {
-			"user2/device2/stream2"
-			...
+			"stream": "user2/device2/stream2",
+			"interpolator": "closest"
 		}
 	}
 }
@@ -428,12 +440,12 @@ The dataset query encodes two query types: both t-datasets and x-datasets.
 	"i2": 0,
 	"dataset": {
 		"stream1": {
-			"user1/device1/stream1"
-			...
+			"stream": "user1/device1/stream1",
+			"interpolator": "closest"
 		},
 		"stream2": {
-			"user2/device2/stream2"
-			...
+			"stream": "user2/device2/stream2",
+			"interpolator": "closest"
 		}
 	}
 }
