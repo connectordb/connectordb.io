@@ -1,7 +1,7 @@
 Datasets
 =============
 
-.. warning:: The Dataset API is still undergoing heavy development, and as such might change quite a bit before the final version of ConnectorDB 0.3.0 is released.
+.. warning:: The Dataset Documentation is under construction.
 
 Datasets are one of the most powerful features of ConnectorDB. The underlying issue is simple: You have multiple streams of data
 being gathered at the same time. Each stream is independent, so they do not have synchronized timestamps.
@@ -91,4 +91,3 @@ T-datasets are useful when you want to see how certain data changes over time, o
 Note that for datasets which do not include multiple streams of data, you can oftentimes get an equivalent effect using only PipeScript (transforms).
 
 
-.. note:: Currently, a preliminary version of the Dataset API is accessible through Python. Datasets are not yet available through the web interface.
