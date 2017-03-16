@@ -4,7 +4,7 @@
 .. centered:: Click `here </download/connectordb_server_current_linux_amd64.tar.gz>`_ to download ConnectorDB Server.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/connectordb_server_current_linux_amd64.tar.gz";</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/connectordb_server_current_linux_amd64.tar.gz";},0);</script>
 
 If you want to set up an internet-connected server, a VPS provider such as [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04) is recommended.
 This tutorial assumes that you have already set up a server.

@@ -4,7 +4,7 @@
 .. centered:: Click `here </download/connectordb_server_current_linux_arm.tar.gz>`_ to download ConnectorDB Server for Raspberry Pi.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/connectordb_server_current_linux_arm.tar.gz";</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/connectordb_server_current_linux_arm.tar.gz";},0);</script>
 
 
 ## Dependencies

@@ -4,7 +4,7 @@
 .. centered:: Click `here </download/connectordb_server_current_mac_amd64.tar.gz>`_ to download ConnectorDB Server for Mac.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/connectordb_server_current_mac_amd64.tar.gz";</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/connectordb_server_current_mac_amd64.tar.gz";},0);</script>
 
 
 Unfortunately, there is no mac desktop version of ConnectorDB at this time. That means that you cannot yet gather data on your laptop use, nor can you have

@@ -4,7 +4,7 @@
 .. centered:: Click `here </download/ConnectorDB%20Setup.exe>`_ to download ConnectorDB for Windows.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/ConnectorDB%20Setup.exe";</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/ConnectorDB%20Setup.exe";},0);</script>
 
 
 
