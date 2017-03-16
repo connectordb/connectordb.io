@@ -14,6 +14,7 @@ the second is for setting up a powerful internet-accessible linux server running
 
   Windows <windows.md>
   Linux <linux.rst>
+  Raspberry Pi <pi.rst>
   Mac <mac.md>
 
   Upgrading <upgrading.md>

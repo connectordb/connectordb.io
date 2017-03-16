@@ -1,35 +1,33 @@
 # Server
 
 ```eval_rst
-.. centered:: Click `here </download/connectordb_server_current_linux_amd64.tar.gz>`_ to download ConnectorDB Server.
+.. centered:: Click `here </download/connectordb_server_current_linux_arm.tar.gz>`_ to download ConnectorDB Server for Raspberry Pi.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/connectordb_server_current_linux_amd64.tar.gz";</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/connectordb_server_current_linux_arm.tar.gz";</script>
 
-If you want to set up an internet-connected server, a VPS provider such as [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04) is recommended.
-This tutorial assumes that you have already set up a server.
 
 ## Dependencies
 
-To start off, you need to make sure that you have all of the necessary dependencies. ConnectorDB needs recent versions of both Postgres and Redis installed:
+To start off, you need to make sure that you have all of the necessary dependencies. ConnectorDB needs a recent version of Postgres:
 
 ```bash
-sudo apt-get install postgresql redis-server
+sudo apt-get install postgresql
 ```
+
+Since the redis server in Raspbian is outdated, ConnectorDB comes with its own copy, so redis does not need to be installed.
 
 The servers are managed by ConnectorDB, so you do not need them to be run on startup:
 
 ```bash
 sudo systemctl disable postgresql.service
 sudo systemctl stop postgresql.service
-sudo systemctl disable redis-server.service
-sudo systemctl stop redis-server.service
 ```
 
 Next, download the ConnectorDB binaries. Only 64 bit linux is supported at this time.
 
 ```bash
-wget https://connectordb.io/download/connectordb_server_current_linux_amd64.tar.gz -O connectordb.tar.gz
+wget https://connectordb.io/download/connectordb_server_current_linux_arm.tar.gz -O connectordb.tar.gz
 tar -zxvf connectordb.tar.gz
 
 ```
@@ -41,8 +39,8 @@ test@connectordb.com $ cd ./bin
 test@connectordb.com $ ./connectordb --version
 ConnectorDB 0.3.0b1
 
-arch: linux/amd64
-go: go1.7
+arch: linux/arm
+go: go1.8
 git: 209f1335b95aa115c57642c06f896e03b68d637c
 build: 2016-09-06_07:29:26AM
 ```
@@ -116,37 +114,21 @@ Before you can successfully run ConnectorDB on your server, you will need to edi
 
 ```javascript
 {
-  // This option needs to be set for ConnectorDB to work on the internet. If you don't
+  // Since ConnectorDB is running as a server, you can set the port to 80
+  "port": 80,
+  
+  // This option needs to be set for ConnectorDB to work on the network. If you don't
   // have a domain name (such as when running on a local Raspberry Pi), you can use
-  // the IP address instead: http://192.168.1.123
-  "siteurl": "https://cdb.mysite.com",
+  // the IP address instead. Run the command "ip address" to get the ip
+  "siteurl": "http://192.168.1.123",
 
-  // When running behind a reverse proxy (such as caddy or nginx), you can leave this
-  // value at the default. If you want ConnectorDB to be secure, make sure to run
-  // it on port 443 (if running without a domain name, you will either have to use port 80 or
-  // generate your own https certificates)
-  "port": 443,
-  // Since we're running on port 443 (https), we redirect port 80 (http).
-  "redirect80": true,
 
   // Make sure that ConnectorDB is exposed to the internet
   "hostname": "0.0.0.0",
-
-  // ConnectorDB can generate its own Let's Encrypt TLS certificates, so that nobody
-  // can snoop on your data. Change the following values to enable Let's Encrypt support.
-  "tls": {
-    "enabled": true,
-    "acme": {
-      "enabled": true,
-      "domains": [
-        "cdb.mysite.com"
-      ],
-      // You must agree to the Let's Encrypt terms of service
-      "tos_agree": true
-    }
-  },
 }
 ```
+
+Note that this is a basic setup for a private network. You should enable tls support if running on a non-private network.
 
 ## Creating a User
 
@@ -156,7 +138,7 @@ With ConnectorDB all set up, you can add all of your users by running with `join
 connectordb start mydatabase/db --join
 ```
 
-You can now use your browser to add as many users as you want by navigating to `https://cdb.mysite.com/join`.
+You can now use your browser to add as many users as you want by navigating to `http://192.168.1.123/join`.
 
 Once all users are added, you should stop ConnectorDB to disable join mode:
 

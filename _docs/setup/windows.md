@@ -3,6 +3,10 @@
 ```eval_rst
 .. centered:: Click `here </download/ConnectorDB%20Setup.exe>`_ to download ConnectorDB for Windows.
 ```
+<!-- This code ensures that the download starts if coming from download page -->
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/ConnectorDB%20Setup.exe";</script>
+
+
 
 **Step 1**
 
@@ -21,5 +25,4 @@ If you want to set up a new server, so that all of the data gathered is saved on
 and input a username, password, and email.
 
 
-<!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/ConnectorDB%20Setup.exe";</script>
+
