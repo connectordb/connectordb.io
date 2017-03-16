@@ -1,5 +1,9 @@
 # Windows
 
+```eval_rst
+.. centered:: Click `here </download/ConnectorDB%20Setup.exe>`_ to download ConnectorDB for Windows.
+```
+
 **Step 1**
 
 You can [click here](/download/) to find the most recent version to download.
@@ -15,3 +19,7 @@ If you don't need your own server, and only need to gather data from your comput
 you can fill out the connection details here.
 If you want to set up a new server, so that all of the data gathered is saved on your PC, click on the "Create New" tab,
 and input a username, password, and email.
+
+
+<!-- This code ensures that the download starts if coming from download page -->
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) window.location.href="/download/ConnectorDB%20Setup.exe";</script>
