@@ -1,12 +1,16 @@
 # Windows
 
 ```eval_rst
-.. centered:: Click `here </download/ConnectorDB%20Setup.exe>`_ to download ConnectorDB for Windows.
+.. note:: Click `here </download/ConnectorDB%20Setup.exe>`_ to download ConnectorDB for Windows.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
 <script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/ConnectorDB%20Setup.exe";},0);</script>
 
 
+
+**Quick video tutorial (no audio) showing an install of ConnectorDB on Windows:**
+
+<div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/UH__LJNQwV8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
 
 **Step 1**
 
