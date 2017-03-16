@@ -10,19 +10,36 @@
 
 **Step 1**
 
-You can [click here](/download/) to find the most recent version to download.
+Download the installer
 
 **Step 2**
 
-The windows version comes as an installer, so click through the installer
+Click through the installer
 
 **Step 3**
 
-After installing, you will be presented with the following window:
-If you don't need your own server, and only need to gather data from your computer to an existing server,
-you can fill out the connection details here.
-If you want to set up a new server, so that all of the data gathered is saved on your PC, click on the "Create New" tab,
-and input a username, password, and email.
+After installing, ConnectorDB will start, and you will be presented with the following window:
+
+<img src="/assets/docs/img/windows-desktop.png"/>
+
+By default, ConnectorDB creates a local, automatically managed server for you. If you are an advanced user, you should set up a separate ConnectorDB server,
+and use the "Connect" tab to link your PC to the server.
+
+Otherwise, fill in your desired username, passwords, and click "Create". The setup procedure might take several seconds, and a console window might flash a couple times as your database is generated.
+
+**Step 4**
+
+Once finished, ConnectorDB will run in the background automatically - you can click on the icon in the taskbar to access the UI, and right click on the icon to manage data gathering from your computer.
+
+**Step 5**
+
+Set up Ratings. ConnectorDB is most useful when you manually rate your mood and productivity. Click on the star icon in the UI to add a rating.
 
 
+## After Installing
 
+Congratulations! You're now running your very own ConnectorDB server! Gathering data from your computer is just the beginning.
+To extend the types of data you gather, you should install the additional apps:
+
+- **[Chrome Extension](https://chrome.google.com/webstore/detail/connectordb-chrome-logger/nekbpbloplgnhgfknjaebahdjnabaclf?hl=en)**: Gathers your browsing history
+- **[Android App](/docs/setup/android)**: Gathers data from your Phone
