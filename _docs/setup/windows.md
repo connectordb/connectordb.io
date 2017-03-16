@@ -46,4 +46,4 @@ Congratulations! You're now running your very own ConnectorDB server! Gathering 
 To extend the types of data you gather, you should install the additional apps:
 
 - **[Chrome Extension](https://chrome.google.com/webstore/detail/connectordb-chrome-logger/nekbpbloplgnhgfknjaebahdjnabaclf?hl=en)**: Gathers your browsing history
-- **[Android App](/docs/setup/android)**: Gathers data from your Phone
+- **[Android App](/docs/setup/android.html)**: Gathers data from your Phone
