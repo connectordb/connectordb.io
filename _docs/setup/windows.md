@@ -40,7 +40,7 @@ Once finished, ConnectorDB will run in the background automatically - you can cl
 Set up Ratings. ConnectorDB is most useful when you manually rate your mood and productivity. Click on the star icon in the UI to add a rating.
 
 
-## After Installing
+**After Installing**
 
 Congratulations! You're now running your very own ConnectorDB server! Gathering data from your computer is just the beginning.
 To extend the types of data you gather, you should install the additional apps:
