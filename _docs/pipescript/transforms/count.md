@@ -1,7 +1,7 @@
 <!-- THIS FILE IS AUTO-GENERATED. Edits can be made at https://github.com/connectordb/pipescript/tree/master/resources/docs/transforms -->
 
 # count
-*Counts the number of datapoints that have been seen. It is equivalent to the i in a loop over the sequence.*
+*Counts the number of datapoints that have been seen.*
 
 Count represents the total number of datapoints passed through the transform. It is equivalent to an `i` used in a loop over an array, with the difference that count starts from 1, rather than 0.
 
