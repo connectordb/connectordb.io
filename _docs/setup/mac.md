@@ -1,33 +1,40 @@
 # Mac
 
 ```eval_rst
-.. centered:: Click `here </download/connectordb_server_current_mac_amd64.tar.gz>`_ to download ConnectorDB Server for Mac.
+.. centered:: Click `here </download/connectordb_desktop_current_darwin_amd64.tar.gz>`_ to download ConnectorDB for Mac.
 ```
 <!-- This code ensures that the download starts if coming from download page -->
-<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/connectordb_server_current_mac_amd64.tar.gz";},0);</script>
+<script type="text/javascript">if (/[?&]dl=1/.test(window.location.search)) setTimeout(function() {window.location.href="/download/connectordb_desktop_current_darwin_amd64.tar.gz";},0);</script>
 
 
-Unfortunately, there is no mac desktop version of ConnectorDB at this time. That means that you cannot yet gather data on your laptop use, nor can you have
-an automatically managed ConnectorDB server.
-
-However, experimental builds are available of the ConnectorDB server itself. On mac, it is recommended that you use the sqlite backend, rather than postgres:
-
-
-```
-connectordb create mydatabase --sqlbackend=sqlite3
-connectordb start mydatabase --join
+```eval_rst
+.. warning:: The Mac version of ConnectorDB does not gather data from your desktop yet. It will only manage a local ConnectorDB server for you. For more information on the progress of data-gathering in macs, click `here <https://github.com/connectordb/connectordb/issues/318>`_.
 ```
 
-Going to `http://localhost:3124/join` will allow you to add users to your database. When done, run: 
+To start off, you will need to install a couple dependencies of ConnectorDB, since the Mac version does not yet have an installer.
 
 ```
-connectordb stop mydatabase
+brew install redis
+brew install pyqt5
+pip3 install connectordb apsw
 ```
 
-This will disable free join mode.
+Once these two are installed, you should double-click on the .tar.gz file you downloaded to extract it. 
 
-Finally, to run ConnectorDB, you simply run:
+Then, double-click on the `connectordb-desktop` file. You will get a terminal window pop up, and after a couple seconds, this screen will pop up:
 
+<img src="/assets/docs/img/mac-desktop.png"/>
+
+Type in your chosen username and password, and click `create`. After a couple seconds of work, ConnectorDB will appear in the top corner of your screen:
+
+<img src="/assets/docs/img/mac-icon.png"/>
+
+While the click-menu suggests that data is being gathered, Macs do not yet support desktop data-gathering.
+
+
+```eval_rst
+.. warning:: You will notice that ConnectorDB's app will open your browser upon being clicked. You will need to use Chrome or Firefox as your browser. Safari is not supported at this time.
 ```
-connectordb start mydatabase
-```
+
+Finally, you will want to run ConnectorDB on login, so it is always started in the background. 
+[Please follow these instructions](http://stackoverflow.com/questions/6442364/running-script-upon-login-mac/13372744#13372744) to start ConnectorDB on login.
