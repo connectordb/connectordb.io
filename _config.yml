@@ -2,9 +2,9 @@
 
 # Site settings
 title: ConnectorDB
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+description: "An open-source server for gathering and analysis of quantified-self data"
 analytics: "UA-70773947-3" #Google analytics code in the format XX-nnnnnnnn-n
-baseurl: "" #important: start with /
+baseurl: "/"
 url: "https://connectordb.io"
 
 # Build settings

@@ -40,3 +40,8 @@ be immediately available in the browser if running jekyll in watch mode.
 All contributions are welcome - if something in the docs is confusing, ask about it on [gitter](https://gitter.im/connectordb/connectordb), and send a PR with an explanation that would work for you!
 
 Feel free to add/fix anything in the docs! PRs are *very* warmly received.
+
+
+### Attribution
+
+The website is built upon the [freelancer jekyll theme](https://github.com/jeromelachaud/freelancer-theme)
