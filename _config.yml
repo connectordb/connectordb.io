@@ -4,7 +4,7 @@
 title: ConnectorDB
 description: "An open-source server for gathering and analysis of quantified-self data"
 analytics: "UA-70773947-3" #Google analytics code in the format XX-nnnnnnnn-n
-baseurl: "/"
+baseurl: ""
 url: "https://connectordb.io"
 
 # Build settings
