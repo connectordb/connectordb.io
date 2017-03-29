@@ -26,14 +26,10 @@ Suppose you have a large JSON file, which contains several million datapoints in
 You can process this file using the pipes executable:
 
 ```bash
-pipes run "\$['something'] | sum | if last" -i mydata.json -ifmt json
+pipes run "d('something') | sum | if last" -i mydata.json -ifmt json
 ```
 
 which will return your processed data in the PipeScript datapoint format.
-
-#### $ in bash
-
-Bash uses the `$` symbol for its own variables. Therefore, when using `pipes` in bash, you will need to escape `$` -> `\$`.
 
 
 #### Input Formats

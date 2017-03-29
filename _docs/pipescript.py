@@ -70,9 +70,23 @@ def mkindex(prepend="./"):
 
 md = mkindex()
 
+# First we write the PipeScript online try-it editor
 with open(tpath + "index.md","w") as f:
+    f.write("<!-- THIS FILE IS AUTO-GENERATED. Modify pipescript.py in /_docs -->\n\n# Try PipeScript\n\n*You can try PipeScript online here. Paste whatever data you'd like to the box on the left, and the result of your transform will appear in the box on the right!*\n\n")
+    f.write('<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css" rel="stylesheet"><style type="text/css">.CodeMirror {border: 1px solid black;height: 650px;}</style>'
+    + '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>'
+    + '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"></script>'
+    + '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/matchbrackets.min.js"></script>'
+    + '<div class="row"><div class="col-md-12" style="margin-bottom: 10px;"><form><div class="input-group">'
+    + '<input type="text" class="form-control" id="script" style="font-family:monospace;font-size: 150%;" value="map(d(\'activity\'),d(\'steps\'):sum)">'
+    + '<span class="input-group-btn"><input type="submit" class="btn btn-default" id="scriptbtn" type="button">Go!</button></span></div></form></div></div>'
+    + '<div class="row"><div class="col-md-6"><textarea id="input"></textarea></div><div class="col-md-6"><textarea id="output"></textarea></div></div>'
+    + '<script src="/assets/js/pipescript_tryit.js"></script>\n\n')
+    
     f.write(md)
+    f.write('\n\n<script type="text/javascript" src="https://demo.connectordb.io/app/pipescript.js"></script><script>runScript();</script>\n\n')
 
+# Next we write the main transform page
 md = mkindex("./transforms/")
 with open(ipath + "index.md","w") as f:
     f.write("<!-- THIS FILE IS AUTO-GENERATED. Modify index_start.md for text, and pipescript.py for table.-->\n\n")

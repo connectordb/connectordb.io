@@ -4,8 +4,8 @@ In the <a href="basics.html">last tutorial</a>, the basic element of PipeScript 
 
 To reiterate in more detail, a Transform can be:
 
-- An algebraic or logical statement: `($ + 5)/2 > 5 or $ < 3`
-- A transform function call (`if($>5)` or equivalently `if $>5`. Both function-call and bash-like syntax are allowed.)
+- An algebraic or logical statement: `(d + 5)/2 > 5 or d < 3`
+- A transform function call (`if(d>5)` or equivalently `if d>5`. Both function-call and bash-like syntax are allowed.)
 - A mixture of the two
 
 ### The Pipeline
@@ -54,10 +54,10 @@ We want to get the **total number of steps we took while running**. We cannot do
 First off, we want to pass through only the datapoints where we were running:
 
 ```
-if $("activity") == "running"
+if d("activity") == "running"
 ```
 
-Notice that the identity operator "$" accepts an argument - it allows you to return a sub-object of your Datapoint. Our result is:
+Notice that the transform "d" accepts an argument - it allows you to return a sub-object of your Datapoint. Our result is:
 
 ```json
 [
@@ -77,10 +77,11 @@ Notice that the identity operator "$" accepts an argument - it allows you to ret
 }]
 ```
 
-Now, let's extract the number of steps from the json object:
+We can now add a `|` after the first part of our statement, and we can perform further transforms on the result of the previous operation (shown above).
+After extracting only the datapoints that have their activity as "running", we return only the "steps" portion of the datapoint:
 
 ```
-if $("activity") == "running" | $("steps")
+if d("activity") == "running" | d("steps")
 ```
 
 ```json
@@ -93,10 +94,13 @@ if $("activity") == "running" | $("steps")
 }]
 ```
 
-Next, we want to get their sum:
+Remember that the result of transforms is saved in the data portion of the datapoint, so the transform `d` without any arguments passed in is really an identity (ie, running `d` as the transform of a datapoint array
+will just return the same array unchanged).
+
+We now want to get the sum of the resulting datapoints:
 
 ```
-if $("activity") == "running" | $("steps") | sum
+if d("activity") == "running" | d("steps") | sum
 ```
 
 ```json
@@ -109,10 +113,11 @@ if $("activity") == "running" | $("steps") | sum
 }]
 ```
 
-This is almost there! Our second datapoint has the answer we were looking for, but the pipeline also returns the intermediate result. Therefore, we add a final transform to the end of the pipeline:
+This is almost there! Our second datapoint has the answer we were looking for, but the pipeline also returns the intermediate results. 
+Therefore, we add a final transform to the end of the pipeline to filter everything but the last datapoint:
 
 ```
-if $("activity") == "running" | $("steps") | sum | if last
+if d("activity") == "running" | d("steps") | sum | if last
 ```
 
 ```json

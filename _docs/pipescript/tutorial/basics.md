@@ -4,9 +4,9 @@ Hi! You are probably here because you want to use PipeScript for some data analy
 
 It is highly recommended that you follow along with the tutorial and experiment using the try-it editor for PipeScript:
 
-<a href="/pipescript.html" class="button alt"><i class="fa fa-pencil-square-o"></i> PipeScript Online Editor</a>
+<a href="../transforms/index.html" class="button alt"><i class="fa fa-pencil-square-o"></i> PipeScript Online Editor</a>
 
-You should also look at <a href="../transforms/index.html">the list of available transforms</a>.
+The page linked above also includes a list of transforms available in PipeScript.
 
 ## Datapoint
 
@@ -38,10 +38,10 @@ This isn't particularly realistic data, since the time stamp is weird, and there
 To start out, let's see which datapoints have their data >= 1.
 
 ```
-$ >= 1
+d >= 1
 ```
 
-If you are familiar with programming, this is just a simple comparison statement using a weird "$" symbol.
+If you are familiar with programming, this is just a simple comparison statement. In PipeScript, `d` represents the data portion of a datapoint.
 
 Running the above PipeScript returns:
 
@@ -55,7 +55,7 @@ Running the above PipeScript returns:
 
 #### So what happened here?
 
-PipeScript is a stream processing language. This means that your script is executed in order for every datapoint individually. Using the built-in "$" transform, which is the identity (ie, it always just returns the datapoint it gets), we can get our result in the data section of a new stream of datapoints.
+PipeScript is a stream processing language. This means that your script is executed in order for every datapoint individually. Using the built-in "d" transform, which is the identity (ie, it always just returns the datapoint it gets), we can get our result in the data section of a new stream of datapoints.
 
 Also notice that the boolean was automatically converted to a number. In PipeScript, `false==0` and `true==1`.
 
@@ -64,7 +64,7 @@ Also notice that the boolean was automatically converted to a number. In PipeScr
 Logic operations (and/or/not) are built into PipeScript. This allows you to use them as you would in python:
 
 ```
-$ < 0 or not $ < 1
+d < 0 or not d < 1
 ```
 
 ```json
@@ -80,7 +80,7 @@ $ < 0 or not $ < 1
 PipeScript also supports basic algebra. In particular, `+-/*%^` are all built into the language, with `x^y` meaning `pow(x,y)`.
 
 ```
-($+5)/2
+(d+5)/2
 ```
 
 gives:
@@ -93,12 +93,19 @@ gives:
 {"t": 124, "d": 3}]
 ```
 
+As a side note, previous versions of ConnectorDB used $ instead of `d` for the data portion of the datapoint. The $ transform
+is still included for backwards-compatibility, and because it is more visible in certain contexts:
+
+```
+($+5)/2
+```
+
 By itself, being able to compare and add things to datapoints isn't particularly enlightening, but it becomes useful when used for filtering data:
 
 ### Filtering Data
 
 ```
-if $ >= 1
+if d >= 1
 ```
 
 In PipeScript, the `if` statement is really a filter. It permits only those datapoints to pass that have met the given condition. When run on our original dataset above, we get:
@@ -111,7 +118,7 @@ In PipeScript, the `if` statement is really a filter. It permits only those data
 
 Another, probably more clear, way of writing this same transform is:
 ```
-if($>=1)
+if(d>=1)
 ```
 Transforms can be called using both a bash-like syntax `function arg1 arg2 arg3`, and a standard function-call syntax: `function(arg1,arg2,arg3)`. You can even put entire pipelines into arguments of a transform (more on that later).
 

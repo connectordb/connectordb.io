@@ -7,18 +7,20 @@ In the <a href="pipeline.html">last tutorial</a>, we introduced pipelines.
 Now we will go into more detail about what exactly makes up a pipeline. In particular, all arguments to each transform function are actually pipelines. For example:
 
 ```
-if( ($("hi") | $("hello")) == 4 )
+if( (d("hi") | d("hello")) == 4 )
 ```
 
 can go multiple levels into a nested object, all within a single if statement. For convenience, PipeScript also includes `:` as a pipe symbol with high prescedence (the pipe will be taken before algebra is done) which can allow you to simplify your script a bit by dropping the internal parentheses:
 
 ```
-if( $("hi"):$("hello") == 4 )
+if( d("hi"):d("hello") == 4 )
 ```
 
 ### Pipeline Structure
 
-Internally, PipeScript treats each argument as a separate pipeline, whose input is connected to the parent's input.
+Internally, PipeScript treats each argument as a separate pipeline, whose input is connected to the parent's input. 
+
+*Note: "$" below is the same as `d`. It was used as the main identity operator in older versions of PipeScript*
 
 
 <img src="/assets/docs/img/pipeline-structure.png" style="width: 100%" />
@@ -73,13 +75,13 @@ We found the total number of steps for "running" in the <a href="pipeline.html">
 Remember that the code was:
 
 ```
-if $("activity") == "running" | $("steps") | sum | if last
+if d("activity") == "running" | d("steps") | sum | if last
 ```
 
 With the map function, we can do the following:
 
 ```
-map( $("activity"), $("steps"):sum )
+map( d("activity"), d("steps"):sum )
 ```
 
 which will return:
@@ -96,18 +98,26 @@ which will return:
 
 #### What just happened?
 
-When calling `map( arg1, arg2 )`, the second argument's script was hijacked. The map transform manually took control of this argument, and generated copies of the script which were executed for each
-value of arg1.
+When calling `map( arg1, arg2 )`, the second argument's pipeline was hijacked. The map transform manually took control of `arg2`, and generated copies of the script for each
+value of `arg1`. It then ran the scripts only on the datapoints which had the same value of `arg1`, returning only the last datapoint of each pipeline for each instantiation.
 
-Script hijacking enables transforms to do much more powerful things. For example, the `ifelse` transform is a conditional (if statement in most programming languages). It would not be possible
-to do without hijacking its arguments, since they would be executed for every datapoint by default.
+To clarify, we will see what exactly happened in the above call:
+
+1) `map` transform saw the first datapoint, whose activity was `walking`. It created a new instance of `arg2`, `d("steps") | sum`, and ran it on the datapoint, getting `14`.
+2) The next datapoint had as its activity `running`. Another instance of `d("steps") | sum` was created, which gives `10` when run on the datapoint
+3) The third datapoint is `walking`. `map` already has a pipeline started for this value. Passing this datapoint through the existing pipeline we get `26` (14+12)
+4) The fourth datapoint is `running`. Running the corresponding pipeline instance, we get `15`.
+5) There are no more datapoints. The `map` transform returns an object with the last value of each pipeline as a result.
+
+Script hijacking enables transforms to do much more powerful things. For example, the `ifelse` transform is a conditional (if statement in most programming languages). Such scripts would not be possible
+to do without the ability to hijack their arguments, since by default the transforms passed in as arguments are executed for every incoming datapoint of the parent pipeline.
 
 ### What's it good for?
 
 A great example of the power which comes with this class of transform is aggregation queries. If we wanted to get the average number of steps per day, we could simply do:
 
 ```
-map(day, $("steps"):sum ) | reduce(mean)
+map(day, d("steps"):sum ) | reduce(mean)
 ```
 
 Once again, PipeScript's `reduce` function has little in common with the reduce statement in other languages. It reduces a multi-valued object to one value by performing its argument's transform
@@ -118,7 +128,7 @@ PipeScript's `map | reduce` is extremely useful for quick aggregation queries, d
 
 ## Multiple Values
 
-You might want to perform multiple calculations at once in pipescript, or perhaps simply return an object. For this reason, PipeScript supports JSON:
+You might want to perform multiple calculations at once in pipescript, or perhaps simply return an object. For this reason, PipeScript supports JSON-like values:
 
 ```
 {"sum": sum, "total": count} | if last
@@ -129,10 +139,10 @@ This script will return both the sum of all of the datapoints' values, and the n
 Finally, since scripts can get fairly complex with objects, PipeScript does accept multiline scripts. That is, the following is a valid script format:
 
 ```
-if $("activity")!="still"
+if d("activity")!="still"
 | {
-    "total": $("steps"):sum,
-    "some_random_stuff": ( $("steps") | something | something else )
+    "total": d("steps"):sum,
+    "some_random_stuff": ( d("steps") | something | something else )
 }
 | if last
 ```

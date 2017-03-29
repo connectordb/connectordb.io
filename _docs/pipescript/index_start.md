@@ -6,7 +6,7 @@ ConnectorDB uses a tiny  time-series analysis language, called PipeScript, to tr
 
 The goal of PipeScript is to make most data preparation a single line of code.
 
-
+* [Try It Online](transforms/index.md)
 * [Tutorial](tutorial/basics.md)
 * [Extending PipeScript](golang/index.rst)
 

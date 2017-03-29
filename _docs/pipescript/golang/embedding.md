@@ -2,7 +2,7 @@
 
 So you want to embed PipeScript in your project. This page will show you what you need to do!
 
-It is assumed that you have already gone over and understand [the tutorial](basics.html).
+It is assumed that you have already gone over and understand [the tutorial](/docs/pipescript/tutorial/basics.html).
 
 ### Preparation
 
