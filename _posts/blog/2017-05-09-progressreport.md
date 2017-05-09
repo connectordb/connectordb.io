@@ -69,11 +69,10 @@ PipeScript is slow. The current version can do a sum of 1 million datapoints in 
 how fast a sum can be done on the same processor when coded directly:
 
 ```
-BenchmarkSum-4              	 1000000	      1077 ns/op	     328 B/op	      10 allocs/op
-BenchmarkDeepSum-4          	 1000000	      1461 ns/op	     440 B/op	      14 allocs/op
-BenchmarkWhile-4            	  500000	      3842 ns/op	    1045 B/op	      35 allocs/op
-BenchmarkRawIteratorSum-4   	500000000	         2.82 ns/op	       0 B/op	       0 allocs/op
-BenchmarkRawWhile-4         	1000000000	         2.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSum           1000000   1077 ns/op     328 B/op  10 allocs/op
+BenchmarkWhile          500000   3842 ns/op    1045 B/op  35 allocs/op
+BenchmarkRawSum      500000000   2.82 ns/op       0 B/op   0 allocs/op
+BenchmarkRawWhile   1000000000   2.34 ns/op       0 B/op   0 allocs/op
 ```
 
 The goal of the new PipeScript is to be able to do a sum of 10 million datapoints in a second,
