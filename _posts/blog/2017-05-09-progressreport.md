@@ -10,7 +10,7 @@ categories:
 There were no recent updates in the repository, and one might be tempted to think that there was no progress towards the 0.3.0 release. 
 While ConnectorDB work has slowed considerably in the past month due to other work, it has not stopped.
 The main reason that there were no commits is that PipeScript is getting a near-total rewrite, and moving past the technical hurdles
-of enabling the core new features and optimizations is *very* difficult.  I will breifly describe the parts of new PipeScript here:
+of enabling the core new features and optimizations is *very* difficult.  I will briefly describe the parts of new PipeScript here:
 
 ### Expander Transforms
 
