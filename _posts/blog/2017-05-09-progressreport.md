@@ -12,7 +12,7 @@ While ConnectorDB work has slowed considerably in the past month due to other wo
 The main reason that there were no commits is that PipeScript is getting a near-total rewrite, and moving past the technical hurdles
 of enabling the core new features and optimizations is *very* difficult.  I will breifly describe the parts of new PipeScript here:
 
-## Expander Transforms
+### Expander Transforms
 
 Up until now, transforms in PipeScript could only return up to 1 datapoint per input datapoint. With the new version of PipeScript,
 transforms labeled as "Expanders" will be able to "expand" the streams. Why is this needed? One of the core use cases of while loops
@@ -32,7 +32,7 @@ iterate(day,sum)
 The transform returns the sum for each day, but when a day is skipped, it inserts a dummy datapoint with value 0. 
 Expander transforms in general permit more advanced processing of streams, which is why they are so important to the next version of PipeScript.
 
-## Filtering in SubTransforms
+### Filtering in SubTransforms
 
 I personally really hated the fact that I needed to add `if last` to every transform to get a useful result. Currently, getting the mean of the queried datapoints,
 you need to write: 
@@ -63,7 +63,7 @@ need to compute datapoints a whole week into the future to find the next point w
 
 This was the main source of the delay - I think I figured out how to do it correctly, but the code is yet to be written, so time will tell!
 
-## Speed
+### Speed
 
 PipeScript is slow. The current version can do a sum of 1 million datapoints in a second on my laptop (i5 4200U), which is *pathetic* when taking into account
 how fast a sum can be done on the same processor when coded directly:
@@ -86,7 +86,7 @@ This by itself is a good start, but won't bring the speed up to the goal. Notice
 My goal is to avoid allocations were possible, and currently it looks like the simple sum transform will not have any allocations during runtime!
 This still needs to be benchmarked, since the current code is basically placeholder for the future functionality.
 
-## That's it
+### That's it
 
 While there are a couple more features planned, the above are things I think are on track to be implemented soon. With this upgrade, PipeScript will become a much
 more powerful analysis language. Once this is finished, then only documentation and debugging are left for the 0.3.0 release of ConnectorDB!
