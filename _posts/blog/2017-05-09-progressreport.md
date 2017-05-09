@@ -81,7 +81,7 @@ meaning that it must take at most 100ns per datapoint.
 
 Much of the time in the old version was spent converting between types, using the [duck](https://github.com/connectordb/duck) library.
 The first optimization that was done in preparation for the new PipeScript was a new method of type conversion, which is over 10 times faster,
-and is called [quack](https://github.com/connectordb/duck/quack).
+and is called [quack](https://github.com/connectordb/duck/tree/master/quack).
 
 This by itself is a good start, but won't bring the speed up to the goal. Notice that there 10 allocations per operation in a simple sum!
 My goal is to avoid allocations were possible, and currently it looks like the simple sum transform will not have any allocations during runtime!
