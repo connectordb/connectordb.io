@@ -81,5 +81,5 @@ to your current user, you can use
 
 
 ```
-cdb.user.import_device("exportfolder/mydevice")
+cdb.user.import_device("exportfolder/myuser/mydevice")
 ```
