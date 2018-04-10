@@ -1,0 +1,1 @@
+{"datatype": "window.titlebar", "description": "Gathers the currently active window's titlebar text", "downlink": false, "ephemeral": false, "icon": "material:laptop_windows", "name": "activewindow", "nickname": "Active Window", "schema": "{\"type\":\"string\"}"}

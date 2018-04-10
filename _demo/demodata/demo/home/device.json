@@ -1,0 +1,12 @@
+{
+  "apikey": "4dbb62db-076f-4e4d-bd51-715f2f1388cf",
+  "description": "All IoT devices in my house",
+  "enabled": true,
+  "icon": "material:home",
+  "name": "home",
+  "nickname": "Home",
+  "public": false,
+  "role": "none",
+  "user_editable": true,
+  "visible": true
+}

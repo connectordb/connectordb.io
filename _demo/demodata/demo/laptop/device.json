@@ -1,0 +1,12 @@
+{
+  "apikey": "1253d1e3-d1eb-413c-b185-a72a6fa97b8e",
+  "description": "LaptopLogger",
+  "enabled": true,
+  "icon": "material:laptop",
+  "name": "laptop",
+  "nickname": "",
+  "public": false,
+  "role": "",
+  "user_editable": true,
+  "visible": true
+}

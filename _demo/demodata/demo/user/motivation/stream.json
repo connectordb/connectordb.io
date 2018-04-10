@@ -1,0 +1,1 @@
+{"datatype": "rating.stars", "description": "How motivated I am to work towards my goals", "downlink": false, "ephemeral": false, "icon": "material:star", "name": "motivation", "nickname": "Motivation", "schema": "{\"type\":\"integer\",\"minimum\":0,\"maximum\":10}"}

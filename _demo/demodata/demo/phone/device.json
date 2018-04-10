@@ -1,0 +1,12 @@
+{
+  "apikey": "a1de235f-5546-4033-8bf9-496da3671f57",
+  "description": "Android data logging app",
+  "enabled": true,
+  "icon": "material:android",
+  "name": "phone",
+  "nickname": "",
+  "public": false,
+  "role": "",
+  "user_editable": true,
+  "visible": true
+}

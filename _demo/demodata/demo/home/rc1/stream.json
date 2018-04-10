@@ -1,0 +1,1 @@
+{"datatype": "", "description": "Remote Controlled electric socket", "downlink": true, "ephemeral": false, "icon": "material:lightbulb_outline", "name": "rc1", "nickname": "Desk Lamp", "schema": "{\"type\":\"boolean\"}"}

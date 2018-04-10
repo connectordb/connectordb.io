@@ -1,0 +1,12 @@
+{
+  "apikey": "13ff539b-0f5f-44b0-99a0-610ce482bb61",
+  "description": "Google Chrome browsing history",
+  "enabled": true,
+  "icon": "material:web",
+  "name": "chrome",
+  "nickname": "",
+  "public": false,
+  "role": "",
+  "user_editable": true,
+  "visible": true
+}

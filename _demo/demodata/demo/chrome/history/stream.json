@@ -1,0 +1,1 @@
+{"datatype": "browser.history", "description": "All websites visited", "downlink": false, "ephemeral": false, "icon": "material:history", "name": "history", "nickname": "", "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}}"}

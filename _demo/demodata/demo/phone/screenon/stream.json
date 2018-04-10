@@ -1,0 +1,1 @@
+{"datatype": "boolean", "description": "True when the device screen is on", "downlink": false, "ephemeral": false, "icon": "material:smartphone", "name": "screenon", "nickname": "Screen On", "schema": "{\"type\":\"boolean\"}"}

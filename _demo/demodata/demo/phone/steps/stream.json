@@ -1,0 +1,1 @@
+{"datatype": "number.stepcount", "description": "Number of steps taken", "downlink": false, "ephemeral": false, "icon": "material:directions_walk", "name": "steps", "nickname": "Step Count", "schema": "{\"type\":\"number\"}"}

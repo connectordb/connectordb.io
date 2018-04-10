@@ -1,0 +1,1 @@
+{"datatype": "action.count", "description": "Gathers the number of keystrokes made on the keyboard", "downlink": false, "ephemeral": false, "icon": "material:keyboard", "name": "keypresses", "nickname": "", "schema": "{\"type\":\"integer\"}"}

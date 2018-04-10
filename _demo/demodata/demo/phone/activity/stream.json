@@ -1,0 +1,1 @@
+{"datatype": "string.person.activity", "description": "The current activity that phone is detecting", "downlink": false, "ephemeral": false, "icon": "material:motorcycle", "name": "activity", "nickname": "Activity Type", "schema": "{\"type\":\"string\"}"}

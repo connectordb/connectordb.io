@@ -1,0 +1,1 @@
+{"datatype": "boolean", "description": "True when the device is currently plugged in", "downlink": false, "ephemeral": false, "icon": "material:power", "name": "pluggedin", "nickname": "Plugged In", "schema": "{\"type\":\"boolean\"}"}

@@ -1,0 +1,1 @@
+{"datatype": "action.count", "description": "Gathers the number of clicks made with the mouse", "downlink": false, "ephemeral": false, "icon": "material:mouse", "name": "mouseclicks", "nickname": "Mouse Clicks", "schema": "{\"type\":\"integer\"}"}
